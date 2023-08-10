@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   animation: displayContainer 0.7s ease-in-out;
+  overflow-y: hidden;
   .titleImageContainer {
     display: flex;
     align-items: center;
@@ -38,7 +39,7 @@
     border-radius: 0.625rem;
     border: 2px solid #f63c33;
     background: rgba(246, 60, 51, 0.1);
-    transition: all 0.2s ease-in-out;
+    transition: background  0.2s ease-in-out, color 0.2s ease-in-out;
     p {
       color: #f63c33;
       font-size: 22px;
