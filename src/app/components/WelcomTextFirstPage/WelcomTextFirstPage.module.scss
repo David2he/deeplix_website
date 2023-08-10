@@ -1,0 +1,67 @@
+.WelcomTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: displayContainer 0.7s ease-in-out;
+  .titleImageContainer {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.0625rem;
+    gap: 1rem;
+    h1 {
+      font-size: 3.75rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    div {
+      width: 14.375rem;
+      height: 6.25rem;
+      position: relative;
+      transform: translateY(0.3rem);
+    }
+  }
+  p {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .startButton {
+    width: 20.0625rem;
+    height: 3.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    border-radius: 0.625rem;
+    border: 2px solid #f63c33;
+    background: rgba(246, 60, 51, 0.1);
+    transition: all 0.2s ease-in-out;
+    p {
+      color: #f63c33;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    &:hover {
+      background: #f63d33d7;
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@keyframes displayContainer {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

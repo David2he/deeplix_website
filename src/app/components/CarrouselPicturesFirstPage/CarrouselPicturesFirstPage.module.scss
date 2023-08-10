@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+  margin-left: 22px;
+  animation: displayContainer 0.7s ease-in-out;
+  p {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+   
+  }
+  .carrouselContainer {
+    overflow: hidden;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+
+@keyframes displayContainer {
+    0% {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
