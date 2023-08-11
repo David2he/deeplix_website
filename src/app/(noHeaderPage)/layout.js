@@ -5,7 +5,7 @@ export const metadata = {
   description: "Deeplix website",
 };
 
-export default function RootLayout({ children }) {
+export default function NoHeaderPage({ children }) {
   return (
     <html lang="fr">
       <body>{children}</body>
