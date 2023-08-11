@@ -6,6 +6,7 @@ export default function Home() {
     <div>
      <Link href="/welcome">Home</Link>
      <p>LoginPage</p>
+     <p>2 attempt()</p>
     </div>
   );
 }
