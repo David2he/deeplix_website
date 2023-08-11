@@ -35,7 +35,7 @@
     border: 2px solid #f63c33;
     background: rgba(246, 60, 51, 0.1);
     transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-    a {
+    p {
       color: #f63c33;
       font-size: 22px;
       font-style: normal;
@@ -44,7 +44,7 @@
     }
     &:hover {
       background: #f63d33d7;
-      a {
+      p {
         color: #fff;
       }
     }

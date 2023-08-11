@@ -10,9 +10,11 @@ export const FormLogin = () => {
       </div>
       <p className={style.textGeneratedMovie}>Generate a movie now?</p>
       <Input placeHolder="Enter your e-mail address" />
-      <div className={style.startButton}>
-        <Link href={'/welcome'}>START</Link>
-      </div>
+      <Link href={"/welcome"}>
+        <div className={style.startButton}>
+          <p>START</p>
+        </div>
+      </Link>
       <div className={style.signContainer}>
         <span></span>
         <p>or Sign in with</p>
