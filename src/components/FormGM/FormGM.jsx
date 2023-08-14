@@ -3,7 +3,8 @@ import { InputGM } from "../InputGM/InputGM";
 import { TextAreaGM } from "../TextAreaGM/TextAreaGM";
 import { SelectGM } from "../SelectGM/SelectGM";
 import Image from "next/image";
-import { genres, firstRole, secondRole, director, language } from "@/utils/data";
+import data from "@/utils/data.json";
+const { genres, firstRole, secondRole, director, language } = data;
 export const FormGM = () => {
   return (
     <div className={style.formContainer}>
