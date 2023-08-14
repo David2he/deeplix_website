@@ -1,0 +1,104 @@
+.formContainer {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 5.375rem;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.leftPannel {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.rightPannel {
+  .rPannelFormContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5rem;
+    .rPannelFormContentRight {
+      & > :first-child {
+        padding-bottom: 4rem;
+      }
+      & > :nth-child(3) {
+        padding-bottom: 2.125rem;
+      }
+
+      p {
+        padding-bottom: 1.4375rem;
+      }
+    }
+    .rPannelFormContentLeft {
+      & > :first-child {
+        padding-bottom: 7.375rem;
+      }
+      & > :nth-child(2) {
+        padding-bottom: 2.125rem;
+      }
+    }
+  }
+}
+
+.startContainer {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding-top: 4.125rem;
+  .startButton {
+    width: 27.375rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2.1875rem;
+    margin-bottom: 1.75rem;
+    border-radius: 0.625rem;
+    border: 2px solid #f63c33;
+    background: rgba(246, 60, 51, 0.1);
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    .imgContainer {
+      position: relative;
+      width: 65%;
+      height: 1.5rem;
+    }
+    p {
+      color: #f63c33;
+      text-align: center;
+      font-family: IBM Plex Sans;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+    &:hover {
+      background: #f63d33d7;
+      p {
+        color: #fff;
+      }
+    }
+  }
+  .advancedFilterContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+    width: 13.3125rem;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    .crossImgContainer {
+      position: relative;
+      width: 1.1875rem;
+      height: 1.1875rem;
+    }
+  }
+}

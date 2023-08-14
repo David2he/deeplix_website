@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+
+  label {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  input {
+    all: unset;
+    padding: 0.625rem 1rem;
+
+    width: 24rem;
+    border: solid 2px white;
+    border-radius: 0.625rem;
+    color: white;
+
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  textarea {
+    all: unset;
+    padding: 1.1875rem 1rem;
+    width: 24rem;
+    border: solid 2px white;
+    border-radius: 0.625rem;
+    color: white;
+    height: 23.9rem;
+    font-size: 22px;
+    min-height: 16.875rem;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    resize: none;
+    white-space: pre-wrap;
+  }
+  select {
+    all: unset;
+    padding: 0.625rem 1rem;
+    width: 24rem;
+    border: solid 2px white;
+    border-radius: 0.625rem;
+    color: white;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    option {
+      background-color: black;
+    }
+  }
+}
+.selectContainer {
+  position: relative;
+}
+.arrowContainer {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  right: 0.625rem;
+  bottom: calc(50% - 0.5rem);
+  z-index: 1;
+  &.open {
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+  }
+  &.false {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+  }
+}
+

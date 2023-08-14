@@ -1,5 +1,6 @@
 import style from "./WelcomTextFirstPage.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 export const WelcomTextFirstPage = () => {
   return (
     <div className={style.WelcomTextContainer}>
@@ -11,7 +12,9 @@ export const WelcomTextFirstPage = () => {
       </div>
       <p>To generate the movie of your dream, click here</p>
       <div className={style.startButton}>
-        <p>START</p>
+        <Link href={"/generatMovie"}>
+          <p>START</p>
+        </Link>
       </div>
     </div>
   );
