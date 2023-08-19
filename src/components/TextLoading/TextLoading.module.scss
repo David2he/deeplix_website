@@ -1,0 +1,131 @@
+.container {
+  margin: 0 auto;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .loadingTitleContainer {
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-bottom: 4rem;
+    // background-color: blue;
+    .inGenerationTitle {
+      // background-color: rebeccapurple;
+      bottom: 20%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .titleText {
+      color: #fff;
+      text-align: center;
+      font-family: IBM Plex Sans;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+    .spanContainer {
+      transform: translateY(0.3rem);
+      display: flex;
+      gap: 4px;
+      span {
+        width: 06px;
+        height: 06px;
+        border-radius: 50%;
+        background-color: white;
+      }
+    }
+  }
+
+  .appearDoneTitle {
+  
+    animation: appearDoneTitle 0.8s 0.4s ease-in-out forwards;
+  }
+  .filmGenerationDoneTitle{
+    bottom: 20%;
+    position: absolute;
+    opacity: 0;
+  }
+  .loadedSPan {
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation: spanLoader 0.9s ease-in-out infinite;
+        animation-delay: $i * 0.2s;
+      }
+    }
+  }
+  .finisLoadedSpan {
+    animation: endSpanLoader 0.9s ease-in-out forwards;
+  }
+
+  .loadingGeneratedTextContainer {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+  }
+}
+
+.finisLoaded {
+  animation: removeTitle 0.6s ease-in-out forwards;
+}
+
+.loadingPercentageContainer {
+  animation-delay: calc(0.6s + 1.8s);
+}
+.loadingTitleContainer {
+  animation-delay: calc(0.25s + 1.8s);
+}
+.loadingGeneratedTextContainer {
+  animation-delay: calc(0s + 1.8s);
+}
+
+@keyframes spanLoader {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes endSpanLoader {
+  100% {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+}
+
+@keyframes removeTitle {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes appearDoneTitle {
+  0% {
+    display: block;
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}

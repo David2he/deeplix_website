@@ -9,7 +9,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-
 }
 .leftPannel {
   display: flex;
@@ -101,5 +100,26 @@
       width: 1.1875rem;
       height: 1.1875rem;
     }
+  }
+}
+
+.animated {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+
+  @for $i from 1 through 8 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: 0.2s * $i;
+    }
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
