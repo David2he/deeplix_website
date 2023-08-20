@@ -10,10 +10,10 @@ export const PercentageLoading = ({ onLoadingComplete }) => {
   useEffect(() => {
     const generateIntervalDuration = () => {
       let random = Math.random();
-      if (random < 0.2) {
-        return Math.floor(Math.random() * 600) + 500; 
+      if (random < 0.1) {
+        return Math.floor(Math.random() * 10) + 50;
       }
-      return Math.floor(Math.random() * 100) + 30;
+      return Math.floor(Math.random() * 10) + 30;
     };
 
     const updatePercentage = () => {

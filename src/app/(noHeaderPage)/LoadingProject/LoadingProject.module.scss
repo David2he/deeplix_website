@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
+}
+.loadingContainer{
+    position: absolute;
+}
+.moviePreviewContainer {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-image: url("../../../../public/bgFilmGenerated/01.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  p:first-of-type {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .titleMovie {
+    color: #eaeaea;
+    text-align: center;
+    font-family: Red Rose;
+    font-size: 120px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 1.875rem;
+  }
+  .startButton {
+    width: 20.0625rem;
+    height: 3.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    border-radius: 0.625rem;
+    border: 2px solid #ffffff;
+    background: rgba(181, 181, 181, 0.1);
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+    p {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    &:hover {
+      background: #ffffff;
+      p {
+        color: #000000;
+      }
+    }
+  }
+}
+
+.eraseLoadingContainer {
+  animation: eraseLoaderAnim 0.5s 0.4s ease-in-out forwards;
+}
+.displayMovieContainer {
+  animation: displauMovieAnim 0.5s 1s ease-in-out forwards;
+}
+
+.animElement {
+    opacity: 0;
+  @for $i from 1 through 2 {
+    &:nth-child(#{$i}) {
+      animation: fadeIn 0.5s calc(#{$i * 0.4}s + 1s) ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes eraseLoaderAnim {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes displauMovieAnim {
+  0% {
+    transform: translateY(0.8rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+ 
+  }
+}
