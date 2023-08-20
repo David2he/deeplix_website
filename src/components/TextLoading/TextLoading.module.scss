@@ -6,16 +6,29 @@
   align-items: center;
   justify-content: center;
 
+  .imgContainer {
+    position: relative;
+    height: 15vh;
+    width: 10vw;
+    padding-bottom: 0.9375rem;
+    animation-delay: calc(0.8s + 1.8s);
+  }
+
+  .loadingPercentageContainer {
+    padding-top: 2rem;
+    animation-delay: calc(0.6s + 1.8s);
+  }
+
   .loadingTitleContainer {
     width: 60vw;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-bottom: 4rem;
-    // background-color: blue;
+    padding-bottom: 5rem;
+    animation-delay: calc(0.25s + 1.8s);
+
     .inGenerationTitle {
-      // background-color: rebeccapurple;
       bottom: 20%;
       position: absolute;
       display: flex;
@@ -28,14 +41,14 @@
       text-align: center;
       font-family: IBM Plex Sans;
       font-size: 25px;
-      font-style: normal;
       font-weight: 500;
-      line-height: normal;
     }
+
     .spanContainer {
       transform: translateY(0.3rem);
       display: flex;
       gap: 4px;
+
       span {
         width: 06px;
         height: 06px;
@@ -45,15 +58,33 @@
     }
   }
 
+  .loadingGeneratedTextContainer {
+    overflow: hidden;
+    text-align: center;
+    height: 10vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-delay: calc(0s + 1.8s);
+    color: #bfbfbf;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }
+
   .appearDoneTitle {
-  
     animation: appearDoneTitle 0.8s 0.4s ease-in-out forwards;
   }
-  .filmGenerationDoneTitle{
+
+  .filmGenerationDoneTitle {
     bottom: 20%;
     position: absolute;
     opacity: 0;
   }
+
   .loadedSPan {
     @for $i from 1 through 3 {
       &:nth-child(#{$i}) {
@@ -62,42 +93,23 @@
       }
     }
   }
+
   .finisLoadedSpan {
     animation: endSpanLoader 0.9s ease-in-out forwards;
-  }
-
-  .loadingGeneratedTextContainer {
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    text-align: center;
   }
 }
 
 .finisLoaded {
-  animation: removeTitle 0.6s ease-in-out forwards;
-}
-
-.loadingPercentageContainer {
-  animation-delay: calc(0.6s + 1.8s);
-}
-.loadingTitleContainer {
-  animation-delay: calc(0.25s + 1.8s);
-}
-.loadingGeneratedTextContainer {
-  animation-delay: calc(0s + 1.8s);
+  animation: removeAfterLoading 0.6s ease-in-out forwards;
 }
 
 @keyframes spanLoader {
-  0% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
     opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 
@@ -108,20 +120,19 @@
   }
 }
 
-@keyframes removeTitle {
+@keyframes removeAfterLoading {
   0% {
     opacity: 1;
     transform: translateY(0);
   }
   100% {
     opacity: 0;
-    display: none;
+    transform: translateY(0.75rem);
   }
 }
 
 @keyframes appearDoneTitle {
   0% {
-    display: block;
     opacity: 0;
     transform: translateY(0);
   }
