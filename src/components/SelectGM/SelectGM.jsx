@@ -34,6 +34,9 @@ export const SelectGM = ({ name, label, data }) => {
       <label htmlFor={name}>{label}</label>
       <ul name={name} id={name} className="containerUL" onClick={() => openMenuOnClick()}>
         <li>{selectedGenre}</li>
+        <div className={`arrowContainer ${openMenue ? "open" : "close"}`}>
+          <Image src="/arrowLeftDirection.svg" alt="arrow" fill={true} />
+        </div>
       </ul>
       <ul
         name={name}

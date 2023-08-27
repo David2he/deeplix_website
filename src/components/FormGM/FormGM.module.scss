@@ -5,10 +5,11 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 1rem;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+ 
 }
 .leftPannel {
   display: flex;
@@ -19,12 +20,11 @@
 .rightPannel {
   .rPannelFormContent {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    
     gap: 3.5rem;
     .rPannelFormContentRight {
       & > :first-child {
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;
       }
       & > :nth-child(3) {
         padding-bottom: 2.125rem;
@@ -36,7 +36,7 @@
     }
     .rPannelFormContentLeft {
       & > :first-child {
-        padding-bottom: 7.375rem;
+        padding-bottom: 6.1rem;
       }
       & > :nth-child(2) {
         padding-bottom: 2.125rem;
@@ -49,7 +49,7 @@
   display: flex;
   align-items: center;
   gap: 3.5rem;
-  padding-top: 4.125rem;
+  padding-top: 1.5rem;
   .startButton {
     width: 27.375rem;
     height: 5rem;
@@ -74,7 +74,7 @@
       color: #f63c33;
       text-align: center;
       font-family: IBM Plex Sans;
-      font-size: 24px;
+      font-size: 20px;
       font-style: normal;
       font-weight: 400;
       line-height: normal;
@@ -114,7 +114,7 @@
 
   @for $i from 1 through 8 {
     &:nth-of-type(#{$i}) {
-      animation-delay: 0.2s * $i;
+      animation-delay: 0.3s * $i;
     }
   }
 }

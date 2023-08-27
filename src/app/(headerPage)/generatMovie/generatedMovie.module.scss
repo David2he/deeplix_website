@@ -1,0 +1,17 @@
+.container {
+  height: 80vh;
+  position: relative;
+}
+.textFooterContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY();
+  span {
+    color: red;
+    text-decoration: underline;
+  }
+}
