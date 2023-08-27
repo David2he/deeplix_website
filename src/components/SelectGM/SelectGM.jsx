@@ -1,30 +1,56 @@
 "use client";
 import "@/styles/formHandlerGM.scss";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 export const SelectGM = ({ name, label, data }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [selectedGenre, setSelectedGenre] = useState(name);
+  const [openMenue, setOpenMenu] = useState(false);
+  const containerRef = useRef();
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setOpenMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
+  const openMenuOnClick = (option) => {
+    if (option) {
+      setSelectedGenre(option);
+      setOpenMenu((prevOpen) => !prevOpen);
+    } else {
+      setOpenMenu((prevOpen) => !prevOpen);
+    }
+  };
 
   return (
-    <div className="container">
+    <div className="container" ref={containerRef}>
       <label htmlFor={name}>{label}</label>
-      <div
-        className="selectContainer"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+      <ul name={name} id={name} className="containerUL" onClick={() => openMenuOnClick()}>
+        <li>{selectedGenre}</li>
+      </ul>
+      <ul
+        name={name}
+        id={name}
+        className={`containerULABS ${openMenue ? "openMenue" : "closeMenue"}`}
       >
-        <select name={name} id={name}>
-          <option value=""></option>
-          {data.map((option) => (
-            <option value={option} key={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-        <div className={`arrowContainer ${isHovered  ? "open" : "false"}`}>
-          <Image src="/arrowLeftDirection.svg" alt="arrow" fill={true} />
-        </div>
-      </div>
+        {data.map((option) => (
+          <li
+            value={option}
+            key={option}
+            className="listData"
+            onClick={() => openMenuOnClick(option)}
+          >
+            {option}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

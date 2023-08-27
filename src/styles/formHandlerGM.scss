@@ -2,6 +2,55 @@
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
+  position: relative;
+  z-index: -10;
+
+  
+  .base {
+    width: 26rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    list-style: none;
+    background-color: black;
+  }
+  
+  .containerUL {
+    @extend .base;
+  
+    padding: 0.625rem 1rem;
+    border: solid 2px white;
+    border-radius: 0.625rem;
+    color: white;
+    font-size: 22px;
+  
+  }
+  
+  .containerULABS {
+    @extend .base;
+    opacity: 0;
+    width: 100%; // Ceci surcharge la largeur de la base.
+    color: white;
+    font-size: 18px;
+    height: 15rem;
+    overflow-y: scroll;
+    position: absolute;
+    top: 92%;
+    z-index: 999999;
+    border-left: solid 2px white;
+    border-right: solid 2px white;
+    border-bottom: solid 2px white;
+    border-radius: 0 0 0.625rem 0.625rem;
+  
+    .listData {
+      padding-left: 1.8rem;
+      padding: 0.6rem 0 0 1.8rem;
+      background-color: black;
+  
+    }
+  }
+
 
   label {
     font-size: 24px;
@@ -53,15 +102,15 @@
     line-height: normal;
     background-color: transparent;
     position: relative;
-    z-index: 2;
+    z-index: -10;
+
+    list-style: none;
     option {
       background-color: black;
     }
   }
 }
-.selectContainer {
-  position: relative;
-}
+
 .arrowContainer {
   position: absolute;
   width: 1rem;
@@ -77,5 +126,54 @@
     transform: rotate(0deg);
     transition: transform 0.3s ease;
   }
+}
+
+
+
+.openMenue {
+  animation: openMenu 0.3s ease-in-out forwards;
+}
+.closeMenue {
+  animation: closeMenu 0.3s ease-in-out forwards;
+}
+
+@keyframes openMenu {
+  0% {
+    height: 15rem;
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes closeMenu {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1rem);
+    height: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  height: 4rem;
+  box-shadow: inset 0 0 5px rgb(87, 7, 7);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 4rem;
+  background: red;
+  border-radius: 4px;
 }
 
