@@ -7,7 +7,13 @@ export const Header = ({imageSource}) => {
     <div className={style.headerContainer}>
       <Link href={"./welcome"}><p>Menu</p></Link>
       <Image src={imageSource} alt="Deeplix Logo" width={100} height={100} quality={100}/>
+      <div className={style.userNameContainer}>
+        <div className={style.imgContainer}>
+        <Image src={"./arrowIcon.svg"} fill={true} />
+        </div>
       <p>Théo M.</p>
+      </div>
+  
     </div>
   );
 };

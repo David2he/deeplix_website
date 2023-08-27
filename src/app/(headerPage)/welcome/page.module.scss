@@ -1,6 +1,8 @@
 .mainContainer{
+    overflow: hidden;
+    margin-top: 4rem;
     display: flex;
     flex-direction: column;
-    gap: 15rem;
+    gap: 8rem;
     overflow: hidden;
 }

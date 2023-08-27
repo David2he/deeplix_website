@@ -12,7 +12,7 @@ export const FormLogin = () => {
       <Input placeHolder="Enter your e-mail address" />
       <Link href={"/welcome"}>
         <div className={style.startButton}>
-          <p>START</p>
+          <p>CONTINUE</p>
         </div>
       </Link>
       <div className={style.signContainer}>
@@ -24,7 +24,8 @@ export const FormLogin = () => {
         <Image src="/signIn.png" alt="logo" fill={true} />
       </div>
       <p className={style.lillTextInfo}>
-        I understand that my information will be used in accordance with Deepflix’s Privacy Policy
+        I understand that my information will be used in accordance with Deepflix’s{" "}
+        <span className={style.lillTextInfoUnderline}>Privacy Policy</span>
       </p>
     </div>
   );

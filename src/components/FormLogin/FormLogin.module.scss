@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4.25rem 0 4.6875rem 0;
+  padding: 2.5rem 0 4.6875rem 0;
   font-size: 22px;
   font-style: normal;
   font-weight: 500;
@@ -76,6 +76,10 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    text-decoration-line: underline;
+    line-height: 1.4rem;
+    .lillTextInfoUnderline {
+      text-decoration: underline;
+      color: red;
+    }
   }
 }
