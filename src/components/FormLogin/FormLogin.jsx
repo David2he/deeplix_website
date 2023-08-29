@@ -10,7 +10,7 @@ export const FormLogin = () => {
       </div>
       <p className={style.textGeneratedMovie}>Generate a movie now?</p>
       <Input placeHolder="Enter your e-mail address" />
-      <Link href={{pathname :"/welcome"}}>
+      <Link href={"/welcome"}>
         <div className={style.startButton}>
           <p>CONTINUE</p>
         </div>
