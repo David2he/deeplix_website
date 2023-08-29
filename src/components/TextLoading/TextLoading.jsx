@@ -65,7 +65,10 @@ export const TextLoading = ({endLoading}) => {
   return (
     <div className={style.container}>
       <div className={`${style.imgContainer} ${isLoaded ? "" : style.finisLoaded}`}>
-        <Image src={"./Logo_00.svg"} fill={true}></Image>
+        {/* <Image src={"./Logo_00.svg"} fill={true}></Image> */}
+        <video autoPlay loop className={style.iconLoader}>
+          <source src="/loaderV1.mp4" />
+        </video>
       </div>
       <div className={`${style.loadingPercentageContainer} ${isLoaded ? "" : style.finisLoaded}`}>
         <PercentageLoading onLoadingComplete={handleLoadingComplete} />

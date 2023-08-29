@@ -12,6 +12,11 @@
     width: 10vw;
     padding-bottom: 0.9375rem;
     animation-delay: calc(0.8s + 1.8s);
+
+    .iconLoader {
+      width: 100%;
+
+    }
   }
 
   .loadingPercentageContainer {

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { TextLoading } from "@/components/TextLoading/TextLoading";
 import style from "./LoadingProject.module.scss";
+import Link from "next/link";
 
 export default function LoadingProject() {
   const [eraseLoading, setEraseLoading] = useState(false);
@@ -23,9 +24,11 @@ export default function LoadingProject() {
         }`}
       >
         <p className={eraseLoading ? style.animElement : ""}>Your movie is ready to watch !</p>
-        <p className={`${style.titleMovie} ${eraseLoading ? style.animElement : ""}`}>AGENTI BOTANICI</p>
+        <p className={`${style.titleMovie} ${eraseLoading ? style.animElement : ""}`}>
+          AGENTI BOTANICI
+        </p>
         <div className={style.startButton}>
-          <p>Play</p>
+          <Link href={"./MovieScreen"}>Play</Link>
         </div>
       </div>
     </div>

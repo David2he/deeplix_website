@@ -11,7 +11,7 @@ export const PercentageLoading = ({ onLoadingComplete }) => {
     const generateIntervalDuration = () => {
       let random = Math.random();
       if (random < 0.1) {
-        return Math.floor(Math.random() * 1500) + 50;
+        return Math.floor(Math.random() * 1200) + 40;
       }
       return Math.floor(Math.random() * 500) + 30;
     };
