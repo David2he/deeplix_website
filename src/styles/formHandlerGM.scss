@@ -5,9 +5,8 @@
   position: relative;
   z-index: -10;
 
-  
   .base {
-    width: 26rem;
+    width: 100%;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -15,22 +14,21 @@
     list-style: none;
     background-color: black;
   }
-  
+
   .containerUL {
     @extend .base;
-  
+    background-color: rgb(203, 21, 167);
     padding: 0.625rem 1rem;
     border: solid 2px white;
     border-radius: 0.625rem;
     color: white;
     font-size: 20px;
-  
   }
-  
+
   .containerULABS {
     @extend .base;
     opacity: 0;
-    width: 100%; // Ceci surcharge la largeur de la base.
+    background-color: rgb(218, 101, 33);
     color: white;
     font-size: 16px;
     height: 15rem;
@@ -42,15 +40,13 @@
     border-right: solid 2px white;
     border-bottom: solid 2px white;
     border-radius: 0 0 0.625rem 0.625rem;
-  
+
     .listData {
       padding-left: 1.8rem;
       padding: 0.6rem 0 0 1.8rem;
-      background-color: black;
-  
+      // background-color: black;
     }
   }
-
 
   label {
     font-size: 20px;
@@ -126,8 +122,6 @@
   }
 }
 
-
-
 .openMenue {
   animation: openMenu 0.3s ease-in-out forwards;
 }
@@ -165,7 +159,7 @@
 
 ::-webkit-scrollbar-track {
   height: 4rem;
-  box-shadow: inset 0 0 5px rgb(87, 7, 7);
+
   border-radius: 4px;
 }
 
@@ -175,3 +169,7 @@
   border-radius: 4px;
 }
 
+.testContainer {
+  width: 26rem;
+   background-color: rebeccapurple;
+}

@@ -30,7 +30,7 @@ export const SelectGM = ({ name, label, data }) => {
   };
 
   return (
-    <div className="container" ref={containerRef}>
+    <div className="container testContainer" ref={containerRef}>
       <label htmlFor={name}>{label}</label>
       <ul name={name} id={name} className="containerUL" onClick={() => openMenuOnClick()}>
         <li>{selectedGenre}</li>
