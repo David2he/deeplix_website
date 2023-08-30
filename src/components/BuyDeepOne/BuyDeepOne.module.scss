@@ -1,0 +1,88 @@
+.container {
+  width: 34.5625rem;
+  height: 95vh;
+  margin: 0 auto;
+  border-radius: 0.625rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 0 4.6875rem 0;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: relative;
+  
+}
+
+.containerSwapPart {
+  position: relative;
+  animation: swapContainer 1.2s ease-in-out forwards;
+  .stepInfo {
+    opacity: 0;
+    position: absolute;
+    top: 1.4rem;
+    left: 1.4rem;
+    animation: easyAppear 1.2s 0.3s ease-in-out forwards;
+  }
+}
+.logoContainer {
+  position: relative;
+  width: 15.4375rem;
+  height: 4.3125rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  opacity: 0;
+  animation: easyAppear 0.5s 0.2s ease-in-out forwards;
+  span {
+    color: red;
+    text-decoration: underline;
+  }
+}
+
+
+.easyAppear {
+  animation: easyAppear 0.5s ease-in-out forwards;
+}
+.easyDisappear {
+  animation: easyAppear 0.5s ease-in-out forwards reverse;
+}
+
+@keyframes easyAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes swapContainer {
+  0% {
+    opacity: 1;
+    background-color: black;
+    transform: translateY(0);
+  }
+  49% {
+    opacity: 0;
+    width: 34.5625rem;
+    transform: translateY(20%);
+  }
+  50% {
+    width: 80vw;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    width: 80vw;
+  }
+}

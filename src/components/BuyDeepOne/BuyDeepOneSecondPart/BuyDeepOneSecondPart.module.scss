@@ -1,0 +1,98 @@
+.container {
+  height: 100%;
+  width: 40%;
+
+  .stayHidden {
+    opacity: 0;
+  }
+  .canAppear {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+    animation: easyAppear 0.5s ease-in-out forwards;
+  }
+}
+@mixin baseButton {
+  width: 20.0625rem;
+  height: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  p {
+    text-align: center;
+    font-family: IBM Plex Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.whiteButton {
+  @include baseButton;
+  border: 2px solid #ffffff;
+  background: rgba(181, 181, 181, 0.1);
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  p {
+    color: #ffffff;
+  }
+  &:hover {
+    background: #ffffff;
+    p {
+      color: #000000;
+    }
+  }
+}
+.redButton {
+  @include baseButton;
+  border: 2px solid #f63c33;
+  background: rgba(246, 60, 51, 0.1);
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  p {
+    color: #f63c33;
+  }
+  &:hover {
+    background: #f63d33d7;
+    p {
+      color: #fff;
+    }
+  }
+}
+.textLoaderContainer {
+  width: 100%;
+  animation: easyAppear 0.5s ease-in-out forwards;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  p {
+    text-align: left;
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    li {
+      margin-left: 6rem;
+    }
+  }
+}
+
+@keyframes easyAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

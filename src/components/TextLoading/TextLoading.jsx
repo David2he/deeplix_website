@@ -12,7 +12,6 @@ export const TextLoading = ({endLoading}) => {
   const [removeTitle, setRemoveTitle] = useState(false);
 
   const handleLoadingComplete = () => {
-    console.log("Chargement terminé ! VS");
     setTimeout(() => {
       setIsLoaded(false);
       endLoading();

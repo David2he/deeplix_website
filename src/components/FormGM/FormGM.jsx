@@ -68,7 +68,7 @@ export const FormGM = () => {
           </div>
         </div>
         <div className={style.startContainer}>
-          <Link href={'./LoadingProject'}><div className={style.startButton}>
+          <Link href={'./loadingProject'}><div className={style.startButton}>
             <p>Generate your movie </p>
             <div className={style.imgContainer}>
               <Image src="/DeepflixText.svg" alt="logo" fill={true} />
