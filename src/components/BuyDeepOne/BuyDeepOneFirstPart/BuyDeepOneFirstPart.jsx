@@ -15,10 +15,10 @@ export const BuyDeepOneFirstPart = ({ step, setStep }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setFadeOutLoading(true);
-    }, 100);
+    }, 4000);
     const secondTimer = setTimeout(() => {
       setStep(step + 1);
-    }, 100);
+    }, 5000);
     return () => clearTimeout(timer, secondTimer);
   }, []);
   return (
