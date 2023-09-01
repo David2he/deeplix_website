@@ -1,26 +1,14 @@
 "use client";
 import style from "./BuyDeepOneSecondPart.module.scss";
+import { GeneratedText } from "../GeneratedText/GeneratedText";
 import { useState, useEffect } from "react";
 export const BuyDeepOneSecondPart = ({ step, setStep }) => {
   const [canAppear, setCanAppear] = useState(false);
   const [canGenerateText, setCanGenerateText] = useState(false);
-  const [randomNumberContent, setRandomNumberContent] = useState([
-    ["InnerBrownRaise", ""],
-    ["LipPress", ""],
-    ["LipPucker", ""],
-    ["Attention", ""],
-    ["Fear", ""],
-    ["Surprise", ""],
-    ["Valences", ""],
-    ["Engagement", ""],
-  ]);
-  const generateRandomNumbers = () => {
-    return randomNumberContent.map((content) => {
-      return [content[0], Math.random().toFixed(8).toString()];
-    });
-  };
+
 
   const navigateThrougStep = (direction) => {
+    console.log(step + "was a previous step");
     if (direction === "back") {
       setStep(step - 1);
     } else {
@@ -28,7 +16,13 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
     }
   };
 
+
+
+
+
   useEffect(() => {
+
+    
     if (step === 4 && canAppear === false) {
       const timerAppearFirstBlock = setTimeout(() => {
         setCanAppear(true);
@@ -36,34 +30,8 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
       return () => clearTimeout(timerAppearFirstBlock);
     }
 
-    if (canGenerateText) {
-      
-      const generateIntervalDuration = () => {
-        let random = Math.random();
-        console.log(random);
-        if (random < 0.2) {
-          return Math.floor(Math.random() * 600) + 50;
-        }
-        return Math.floor(Math.random() * 80) + 30;
-      };
-      const generateTextInterval = setInterval(() => {
-        setRandomNumberContent(generateRandomNumbers());
-      },15);
-      const timeDuringGeneratedTextInterval = setTimeout(() => {
-        clearInterval(generateTextInterval);
-        navigateThrougStep("forward");
-      }, 10000);
-      return () => clearTimeout(timeDuringGeneratedTextInterval);
-    }
 
-    if (step === 4 && canAppear) {
-      const timerAppearGeneratingText = setTimeout(() => {
-        console.log("in");
-        setCanGenerateText(true);
-      }, 4500);
-      return () => clearTimeout(timerAppearGeneratingText);
-    }
-  }, [canAppear, canGenerateText]);
+  }, [canAppear, canGenerateText, step]);
 
   return (
     <div className={style.container}>
@@ -81,18 +49,7 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
         ) : (
           <div className={style.textLoaderContainer}>
             <p>Scanning...</p>
-            <ul>
-              <li>Measurements</li>
-              <li>Expressions</li>
-              <li>Ethnicity : European</li>
-              {randomNumberContent.map((content, index) => {
-                return (
-                  <li key={index}>
-                    {content[0]} : {content[1]}
-                  </li>
-                );
-              })}
-            </ul>
+            <GeneratedText />
           </div>
         )}
       </div>

@@ -87,7 +87,7 @@
       margin-left: 6rem;
       @for $i from 1 through 11 {
         &:nth-child(#{$i}) {
-          animation: easyAppear 0.5s ease-in forwards #{$i * 0.15}s;
+          animation: easyAppear 0.5s ease-in forwards #{$i * 0.1}s;
         }
       }
     }
