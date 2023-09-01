@@ -16,10 +16,10 @@ export const BuyDeepOneFirstPart = ({ step, setStep }) => {
     const timer = setTimeout(() => {
       setFadeOutLoading(true);
     }, 4000);
-    const secondTimer = setTimeout(() => {
+    const appearPictureAfterFakeLoadingTimer = setTimeout(() => {
       setStep(step + 1);
-    }, 5000);
-    return () => clearTimeout(timer, secondTimer);
+    }, 100);
+    return () => clearTimeout(timer, appearPictureAfterFakeLoadingTimer);
   }, []);
   return (
     <div className={style.container}>

@@ -83,7 +83,13 @@
     align-items: flex-start;
     flex-direction: column;
     li {
+      opacity: 0;
       margin-left: 6rem;
+      @for $i from 1 through 11 {
+        &:nth-child(#{$i}) {
+          animation: easyAppear 0.5s ease-in forwards #{$i * 0.15}s;
+        }
+      }
     }
   }
 }
