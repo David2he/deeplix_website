@@ -17,7 +17,6 @@
 
   .containerUL {
     @extend .base;
-    background-color: rgb(203, 21, 167);
     padding: 0.625rem 1rem;
     border: solid 2px white;
     border-radius: 0.625rem;
@@ -28,7 +27,6 @@
   .containerULABS {
     @extend .base;
     opacity: 0;
-    background-color: rgb(218, 101, 33);
     color: white;
     font-size: 16px;
     height: 15rem;
@@ -171,5 +169,4 @@
 
 .testContainer {
   width: 26rem;
-   background-color: rebeccapurple;
 }

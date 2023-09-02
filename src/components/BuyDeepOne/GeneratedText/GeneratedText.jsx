@@ -1,59 +1,70 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import style from "../BuyDeepOneSecondPart/BuyDeepOneSecondPart.module.scss";
 
-export const GeneratedText = () => {
-  const [isGenerating, setIsGenerating] = useState(true);
-  const [randomNumberContent, setRandomNumberContent] = useState([
-    ["InnerBrownRaise", "0"],
-    ["LipPress", "0"],
-    ["LipPucker", "0"],
-    ["Attention", "0"],
-    ["Fear", "0"],
-    ["Surprise", "0"],
-    ["Valences", "0"],
-    ["Engagement", "0"],
-  ]);
-
-  const generateRandomNumbers = () => {
-    return randomNumberContent.map((content) => {
-      return [content[0], (Math.random() * 2).toFixed(4).toString()];
-    });
-  };
+export const GeneratedText = ({ content, index, setFinisTextGeneration }) => {
+  const [canGenerate, setCanGenerate] = useState(false);
+  const [generatedNumber, setGeneratedNumber] = useState("");
+  const [deffinitlyStop, setDeffinitlyStop] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
-    let intervalId;
+    let interval;
+    let canGenerateTimer;
+    let stopGeneratingTimer;
+    let fakeLaggingTimer;
 
-    if (isGenerating) {
-      intervalId = setInterval(() => {
-        setRandomNumberContent(generateRandomNumbers());
-      }, 100);
+    const generateRandomNumber = (isFakeLagging) => {
+      setGeneratedNumber(
+        (Math.random() * 2).toFixed(Math.random() * 8) + (isFakeLagging ? "..." : "")
+      );
+    };
 
-      setTimeout(() => {
-        clearInterval(intervalId);
-        setIsGenerating(false);
-      }, 10000);
-    }
-
-    return () => {
-      if (intervalId) {
-        clearInterval(intervalId);
+    const timerFluctuation = () => {
+      let random = Math.random();
+      if (random < 0.1) {
+        fakeLaggingTimer = true;
+        return Math.floor(Math.random() * 200) + 40;
+      } else {
+        fakeLaggingTimer = false;
+        return 10;
       }
     };
-  }, [isGenerating]);
+
+    const resetInterval = () => {
+      clearInterval(interval);
+      interval = setInterval(() => {
+        generateRandomNumber(fakeLaggingTimer);
+        resetInterval();
+      }, timerFluctuation());
+    };
+
+    if (!deffinitlyStop) {
+      canGenerateTimer = setTimeout(() => {
+        setCanGenerate(true);
+        resetInterval();
+      }, 1800 + index * Math.random() * 40);
+    }
+    stopGeneratingTimer = setTimeout(() => {
+      setDeffinitlyStop(true);
+      setCanGenerate(false);
+      generateRandomNumber(false);
+      clearInterval(interval);
+      setFinisTextGeneration(true);
+    }, 6000);
+
+    return () => {
+      clearTimeout(canGenerateTimer);
+      clearTimeout(stopGeneratingTimer);
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <>
-      <ul>
-        <li>Measurements</li>
-        <li>Expressions</li>
-        <li>Ethnicity : European</li>
-        {randomNumberContent.map((content, index) => {
-          return (
-            <li key={index}>
-              {content[0]} : {content[1]}
-            </li>
-          );
-        })}
-      </ul>
+      <li>
+        <p>{content} :</p>
+        <p className={style.numberRatio}>{generatedNumber}</p>
+      </li>
     </>
   );
 };

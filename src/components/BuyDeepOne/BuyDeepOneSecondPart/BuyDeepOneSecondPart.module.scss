@@ -66,31 +66,131 @@
     }
   }
 }
-.textLoaderContainer {
+.container5And6 {
   width: 100%;
   animation: easyAppear 0.5s ease-in-out forwards;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  p {
-    text-align: left;
+  .scanningPContainer {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    p {
+      text-align: left;
+    }
+    .finishScanning {
+      animation: easyDisappear 0.5s 1.1s ease-in-out forwards;
+    }
+    div {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 0.4rem;
+      span {
+        background-color: white;
+        width: 0.25rem;
+        height: 0.25rem;
+        border-radius: 50%;
+        background-color: #ff0000;
+      }
+    }
+
+    .isScanningDOT {
+      span {
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            animation: easyAppear 0.5s ease-in infinite #{$i * 0.1}s;
+          }
+        }
+      }
+    }
+    .finishScanningDOT {
+      span {
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            animation: easyDisappear 0.8s ease-in forwards #{$i * -0.3}s;
+          }
+        }
+      }
+    }
   }
+
   ul {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+
     li {
-      opacity: 0;
       margin-left: 6rem;
-      @for $i from 1 through 11 {
-        &:nth-child(#{$i}) {
-          animation: easyAppear 0.5s ease-in forwards #{$i * 0.1}s;
-        }
+      display: flex;
+    }
+  }
+
+  .appearLi li {
+    opacity: 0;
+
+    @for $i from 1 through 11 {
+      &:nth-child(#{$i}) {
+        animation: easyAppear 0.5s ease-in forwards #{$i * 0.1}s;
       }
     }
+  }
+  .disappearLi li {
+    @for $i from 1 through 11 {
+      &:nth-child(#{$i}) {
+        animation: easyDisappear 0.5s ease-in forwards #{$i * 0.1}s;
+      }
+    }
+  }
+  .numberRatio {
+    font-weight: 100;
+    color: rgb(184, 184, 184);
+    margin-left: 0.5rem;
+  }
+}
+
+.container6And7 {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+
+  .titleText {
+    width: 70%;
+    letter-spacing: 2px;
+  }
+
+  .italicText {
+    width: 70%;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+    text-align: justify;
+    letter-spacing: 2px;
+  }
+
+  .block67CanAppear {
+    opacity: 0;
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        animation: easyAppear 0.5s ease-in forwards #{$i * 0.4}s;
+      }
+    }
+  }
+}
+
+@keyframes easyDisappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

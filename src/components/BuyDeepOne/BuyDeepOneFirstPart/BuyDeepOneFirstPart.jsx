@@ -10,6 +10,7 @@ export const BuyDeepOneFirstPart = ({ step, setStep }) => {
     } else {
       setStep(step + 1);
     }
+    console.log(step)
   };
 
   useEffect(() => {
@@ -18,7 +19,7 @@ export const BuyDeepOneFirstPart = ({ step, setStep }) => {
     }, 4000);
     const appearPictureAfterFakeLoadingTimer = setTimeout(() => {
       setStep(step + 1);
-    }, 100);
+    }, 5000);
     return () => clearTimeout(timer, appearPictureAfterFakeLoadingTimer);
   }, []);
   return (
