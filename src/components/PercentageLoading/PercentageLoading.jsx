@@ -7,7 +7,20 @@ export const PercentageLoading = ({ onLoadingComplete }) => {
   const timeoutIdRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  const handleKeyDown = (e) => {
+    if (e.code === "Space") {
+      setLoadingPercentage(100);
+      setIsLoaded(true);
+      onLoadingComplete();
+      if (timeoutIdRef.current) {
+        clearTimeout(timeoutIdRef.current);
+      }
+    }
+  };
+
   useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+
     const generateIntervalDuration = () => {
       let random = Math.random();
       if (random < 0.1) {
@@ -44,6 +57,7 @@ export const PercentageLoading = ({ onLoadingComplete }) => {
       return;
     }
     return () => {
+      window.removeEventListener("keydown", handleKeyDown);
       if (timeoutIdRef.current) {
         clearTimeout(timeoutIdRef.current);
       }

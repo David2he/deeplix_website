@@ -9,7 +9,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
- 
 }
 .leftPannel {
   display: flex;
@@ -20,7 +19,7 @@
 .rightPannel {
   .rPannelFormContent {
     display: flex;
-    
+
     gap: 3.5rem;
     .rPannelFormContentRight {
       & > :first-child {
@@ -51,7 +50,7 @@
   gap: 3.5rem;
   padding-top: 1.5rem;
   .startButton {
-    width: 27.375rem;
+    width: 26rem;
     height: 5rem;
     display: flex;
     justify-content: space-around;
@@ -66,10 +65,12 @@
 
     .imgContainer {
       position: relative;
-      z-index: -1;
+      z-index: 1;
       width: 65%;
       height: 1.5rem;
+      margin-bottom: 0.5rem;
     }
+
     p {
       color: #f63c33;
       text-align: center;
@@ -82,7 +83,7 @@
     &:hover {
       background: #f63d33d7;
       p {
-        color: #fff;
+        color: #ffffff;
       }
     }
   }
@@ -111,14 +112,12 @@
   animation: fadeIn 0.5s forwards;
   z-index: 40;
 
-
   @for $i from 1 through 8 {
     &:nth-of-type(#{$i}) {
       animation-delay: 0.3s * $i;
     }
   }
 }
-
 
 @keyframes fadeIn {
   from {
@@ -132,5 +131,4 @@
 .test {
   position: relative;
   z-index: 9999;
-
 }

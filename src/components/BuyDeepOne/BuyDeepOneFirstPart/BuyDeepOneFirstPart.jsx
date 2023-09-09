@@ -10,7 +10,7 @@ export const BuyDeepOneFirstPart = ({ step, setStep }) => {
     } else {
       setStep(step + 1);
     }
-    console.log(step)
+    console.log(step);
   };
 
   useEffect(() => {
@@ -48,11 +48,11 @@ export const BuyDeepOneFirstPart = ({ step, setStep }) => {
           </div>
         </div>
         <div className={`${style.doubleButtonContainer} ${step === 3 ? style.appear : null}`}>
-          <div className={style.redButton} onClick={() => navigateThrougStep("forwards")}>
-            <p>ALLOW</p>
-          </div>
           <div className={style.whiteButton} onClick={() => navigateThrougStep("back")}>
             <p>DON'T ALLOW</p>
+          </div>
+          <div className={style.redButton} onClick={() => navigateThrougStep("forwards")}>
+            <p>ALLOW</p>
           </div>
         </div>
       </div>

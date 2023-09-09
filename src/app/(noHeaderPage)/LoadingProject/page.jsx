@@ -27,9 +27,11 @@ export default function LoadingProject() {
         <p className={`${style.titleMovie} ${eraseLoading ? style.animElement : ""}`}>
           AGENTI BOTANICI
         </p>
-        <div className={style.startButton}>
-          <Link href={"./MovieScreen"}>Play</Link>
-        </div>
+        <Link href={"./MovieScreen"}>
+          <div className={style.startButton}>
+            <p>PLAY</p>
+          </div>
+        </Link>
       </div>
     </div>
   );

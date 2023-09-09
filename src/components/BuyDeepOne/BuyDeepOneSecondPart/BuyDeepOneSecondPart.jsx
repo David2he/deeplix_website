@@ -7,6 +7,7 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
   const [finisTextGeneration, setFinisTextGeneration] = useState(false);
   const [inBetweenFinishTextGeneration, setInBetweenFinishTextGeneration] = useState(true);
   const [appearBlock6to7, setAppearBlock6to7] = useState(false);
+  const [appearBlock7to8, setAppearBlock7to8] = useState(false);
   const randomNumberContent = [
     "InnerBrownRaise",
     "LipPress",
@@ -94,6 +95,27 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
     );
   };
 
+  const renderBetween7And8 = () => {
+    return (
+      <>
+        <p>
+          Now step back a few meters and blink when you're in position to calibrate your movements.
+        </p>
+        <div className={style.redButton} onClick={() => navigateThrougStep("forward")}>
+          <p>CONTINUE</p>
+        </div>
+      </>
+    );
+  };
+
+  const onPressSpace = (event) => {
+    if (event.code === "Space") {
+      let timer = setTimeout(() => {
+
+      }, 1000);
+    }
+  }
+
   const navigateThrougStep = (direction) => {
     console.log(step + "was a previous step");
     if (direction === "back") {
@@ -127,7 +149,9 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
       timerForStep6_1 = setTimeout(() => {
         setAppearBlock6to7(true);
       }, 1000);
+      window.addEventListener("keydown", onPressSpace);
     }
+
 
     return () => {
       clearTimeout(timerForStep4);
@@ -143,7 +167,9 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
           ? renderBetween4And5()
           : step === 5
           ? renderBetween5And6()
-          : renderBetween6And7()}
+          : step === 6
+          ? renderBetween6And7()
+          : renderBetween7And8()}
       </div>
     </div>
   );

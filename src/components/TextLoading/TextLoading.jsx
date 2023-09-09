@@ -3,8 +3,8 @@ import { useState, useEffect, useRef } from "react";
 import style from "./TextLoading.module.scss";
 import data from "@/utils/textGeneratedData.json";
 import { PercentageLoading } from "../PercentageLoading/PercentageLoading";
-import Image from "next/image";
-export const TextLoading = ({endLoading}) => {
+
+export const TextLoading = ({ endLoading }) => {
   const { action, subject, tools, parameters } = data;
   const timeoutIdRef = useRef(null);
   const [generatedText, setGeneratedText] = useState("");
@@ -65,14 +65,14 @@ export const TextLoading = ({endLoading}) => {
     <div className={style.container}>
       <div className={`${style.imgContainer} ${isLoaded ? "" : style.finisLoaded}`}>
         {/* <Image src={"./Logo_00.svg"} fill={true}></Image> */}
-        <video autoPlay loop className={style.iconLoader}>
+        <video autoPlay loop muted className={style.iconLoader}>
           <source src="/loaderV1.mp4" />
         </video>
       </div>
       <div className={`${style.loadingPercentageContainer} ${isLoaded ? "" : style.finisLoaded}`}>
         <PercentageLoading onLoadingComplete={handleLoadingComplete} />
       </div>
-  
+
       <div className={`${style.loadingTitleContainer} ${isLoaded ? "" : style.finisLoaded}`}>
         <div className={`${style.inGenerationTitle} ${!removeTitle ? "" : style.finisLoaded}`}>
           <p className={style.titleText}>Generating Movie</p>

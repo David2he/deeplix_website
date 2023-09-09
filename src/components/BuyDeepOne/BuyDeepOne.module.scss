@@ -14,9 +14,34 @@
   font-weight: 500;
   line-height: normal;
   position: relative;
-  
 }
-
+.closeCross {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.4rem;
+  width: 2rem;
+  height: 2rem;
+  .spanContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+  }
+  span:first-child {
+    transform: rotate(45deg);
+  }
+  span:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+}
 .containerSwapPart {
   position: relative;
   animation: swapContainer 1.2s ease-in-out forwards;
@@ -36,7 +61,7 @@
 
 .footer {
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
   font-size: 12px;
   font-style: normal;
   font-weight: 300;
@@ -48,7 +73,6 @@
     text-decoration: underline;
   }
 }
-
 
 .easyAppear {
   animation: easyAppear 0.5s ease-in-out forwards;

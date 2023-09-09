@@ -2,10 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import style from "../BuyDeepOneSecondPart/BuyDeepOneSecondPart.module.scss";
 
 export const GeneratedText = ({ content, index, setFinisTextGeneration }) => {
-  const [canGenerate, setCanGenerate] = useState(false);
   const [generatedNumber, setGeneratedNumber] = useState("");
   const [deffinitlyStop, setDeffinitlyStop] = useState(false);
-  const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
     let interval;
@@ -40,13 +38,13 @@ export const GeneratedText = ({ content, index, setFinisTextGeneration }) => {
 
     if (!deffinitlyStop) {
       canGenerateTimer = setTimeout(() => {
-        setCanGenerate(true);
+   
         resetInterval();
       }, 1800 + index * Math.random() * 40);
     }
     stopGeneratingTimer = setTimeout(() => {
       setDeffinitlyStop(true);
-      setCanGenerate(false);
+    
       generateRandomNumber(false);
       clearInterval(interval);
       setFinisTextGeneration(true);

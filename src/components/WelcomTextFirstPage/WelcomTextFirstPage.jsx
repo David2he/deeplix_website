@@ -1,7 +1,7 @@
 import style from "./WelcomTextFirstPage.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-export const WelcomTextFirstPage = ({type}) => {
+export const WelcomTextFirstPage = ({ type }) => {
   return (
     <div className={style.WelcomTextContainer}>
       <div className={style.titleImageContainer}>
@@ -17,11 +17,11 @@ export const WelcomTextFirstPage = ({type}) => {
           ? "To generate the movie of your dream, click here"
           : "The movie you’ve always wanted to play in, generated in seconds."}
       </p>
-      <div className={style.startButton}>
-        <Link href={type === "0" ?"/generatMovie" : "/deepOnePage"}>
+      <Link href={type === "0" ? "/generatMovie" : "/deepOnePage"}>
+        <div className={style.startButton}>
           <p>{type === "0" ? "START" : "BUY DEEP-O1"}</p>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 };

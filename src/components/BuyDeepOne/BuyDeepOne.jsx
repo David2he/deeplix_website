@@ -11,7 +11,13 @@ export const BuyDeepOne = () => {
     console.log(step);
   }, [step]);
   return (
-    <div className={`${step >= 4 && style.containerSwapPart } ${style.container}`}>
+    <div className={`${step >= 4 && style.containerSwapPart} ${style.container}`}>
+      <div className={style.closeCross}>
+        <div className={style.spanContainer}>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
       {step >= 4 && <p className={style.stepInfo}>{step - 3} / 4</p>}
       <div className={style.logoContainer}>
         <Image src="/buyDeepOne/buyDeepOneLogo.png" alt="logo" fill={true} />
