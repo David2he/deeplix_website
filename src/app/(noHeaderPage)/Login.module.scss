@@ -1,24 +1,37 @@
-.LoginPageContainer {
-    background-image: url("../../../public/bgLogin/bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
+.container {
+    .LoginPageContainer {
+        opacity: 0;
+        background-image: url("../../../public/bgLogin/bg.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+    .canAppear {
+        animation: appear 1s ease-in-out forwards;
+    }
+    .videoIntroContainer {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        .fullscreenVideo {
+            width: 70%;
+        }
+    }
 }
 
-.videoIntroContainer {
-    width: 100vw;
-    height: 100vh;
-    background-color: rebeccapurple;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    .fullscreenVideo {
-        overflow: hidden;
-        width: 80%;
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

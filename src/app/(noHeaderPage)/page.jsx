@@ -8,14 +8,15 @@ export default function Home() {
 
     return (
         <div className={style.container}>
-            <div className={style.videoIntroContainer}>
-                <video autoPlay className={style.fullscreenVideo} onEnded={() => setVideoEnded(true)}>
-                    <source src="./DEEPFLIX_INTROWEBSITE.mp4" />
-                </video>
-            </div>
-            {videoEnded && (
-                <div className={style.LoginPageContainer}>
+            {videoEnded ? (
+                <div className={`${style.LoginPageContainer} ${videoEnded && style.canAppear}`}>
                     <FormLogin />
+                </div>
+            ) : (
+                <div className={style.videoIntroContainer}>
+                    <video className={style.fullscreenVideo} onEnded={() => setVideoEnded(true)} muted autoPlay>
+                        <source src="/DEEPFLIX_INTROWEBSITE.mp4" />
+                    </video>
                 </div>
             )}
         </div>
