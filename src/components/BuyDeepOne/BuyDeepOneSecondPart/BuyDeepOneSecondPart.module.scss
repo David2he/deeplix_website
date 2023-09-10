@@ -100,12 +100,7 @@
             span {
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}) {
-                        animation: easyAppear
-                            0.5s
-                            ease-in
-                            infinite
-                            #{$i *
-                            0.1}s;
+                        animation: easyAppear 0.5s ease-in infinite #{$i * 0.1}s;
                     }
                 }
             }
@@ -114,12 +109,7 @@
             span {
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}) {
-                        animation: easyDisappear
-                            0.8s
-                            ease-in
-                            forwards
-                            #{$i *
-                            -0.3}s;
+                        animation: easyDisappear 0.8s ease-in forwards #{$i * -0.3}s;
                     }
                 }
             }
@@ -142,14 +132,14 @@
     .appearLi li {
         opacity: 0;
 
-        @for $i from 1 through 11 {
+        @for $i from 1 through 21 {
             &:nth-child(#{$i}) {
                 animation: easyAppear 0.5s ease-in forwards #{$i * 0.1}s;
             }
         }
     }
     .disappearLi li {
-        @for $i from 1 through 11 {
+        @for $i from 1 through 21 {
             &:nth-child(#{$i}) {
                 animation: easyDisappear 0.5s ease-in forwards #{$i * 0.1}s;
             }
@@ -193,6 +183,35 @@
             }
         }
     }
+}
+.disappearcontainer6And7 {
+    animation: easyDisappear 0.5s ease-in forwards;
+}
+
+.container7and8 {
+    opacity: 0;
+    width: 140%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+.appearBlock7to8 {
+    opacity: 1;
+    animation: easyAppear 0.5s ease-in forwards;
+}
+
+.container8and9 {
+    width: 100%;
+}
+.videoWrapper {
+    display: flex;
+    justify-content: center;
+}
+.fullscreenVideo {
+    height: 40vh;
+    text-align: center;
 }
 
 @keyframes easyDisappear {
