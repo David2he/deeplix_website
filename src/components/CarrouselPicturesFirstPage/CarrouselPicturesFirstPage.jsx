@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import style from "./CarrouselPicturesFirstPage.module.scss";
 
 export const CarrouselPicturesFirstPage = () => {
-    const imagesLength = 6;
+    const imagesLength = 8;
     const carrouselRef = useRef(null);
 
     useEffect(() => {
@@ -16,8 +16,10 @@ export const CarrouselPicturesFirstPage = () => {
                 ) {
                     carrouselRef.current.scrollLeft = 0;
                 }
+                console.log(interval);
+                console.log(carrouselRef.current.scrollLeft);
             }
-        }, 20);
+        }, 100);
 
         return () => clearInterval(interval);
     }, []);

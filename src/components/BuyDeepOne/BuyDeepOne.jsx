@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { BuyDeepOneFirstPart } from "./BuyDeepOneFirstPart/BuyDeepOneFirstPart";
 import { BuyDeepOneSecondPart } from "./BuyDeepOneSecondPart/BuyDeepOneSecondPart";
 export const BuyDeepOne = () => {
-    const [step, setStep] = useState(4);
+    const [step, setStep] = useState(1);
     useEffect(() => {
         console.log(step);
     }, [step]);
