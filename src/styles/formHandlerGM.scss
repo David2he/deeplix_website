@@ -4,7 +4,8 @@
     gap: 0.875rem;
     position: relative;
     z-index: -10;
-
+    width: 26rem;
+    min-height: 1.25rem;
     .base {
         width: 100%;
         font-style: normal;
@@ -24,6 +25,15 @@
         font-size: 20px;
         .test {
             background-color: rebeccapurple;
+        }
+        li:first-child {
+            all: unset;
+            padding: 0.625rem 1rem;
+
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
         }
     }
 
@@ -45,7 +55,6 @@
         .listData {
             padding-left: 1.8rem;
             padding: 0.6rem 0 0 1.8rem;
-            // background-color: black;
         }
     }
 
@@ -59,7 +68,6 @@
         all: unset;
         padding: 0.625rem 1rem;
 
-        width: 24rem;
         border: solid 2px white;
         border-radius: 0.625rem;
         color: white;
@@ -72,7 +80,7 @@
     textarea {
         all: unset;
         padding: 1.1875rem 1rem;
-        width: 24rem;
+
         border: solid 2px white;
         border-radius: 0.625rem;
         color: white;
@@ -87,7 +95,7 @@
     select {
         all: unset;
         padding: 0.625rem 1rem;
-        width: 24rem;
+
         border: solid 2px white;
         border-radius: 0.625rem;
         color: white;
@@ -168,8 +176,4 @@
     height: 4rem;
     background: red;
     border-radius: 4px;
-}
-
-.testContainer {
-    width: 26rem;
 }

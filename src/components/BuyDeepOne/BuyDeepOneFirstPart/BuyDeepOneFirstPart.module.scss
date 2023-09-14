@@ -1,209 +1,224 @@
 .container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2.5rem;
-  margin-top: 1rem;
-  opacity: 0;
-  animation: easyAppear 0.5s 0.4s ease-in-out forwards;
-  p {
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-  }
-  .cameraImgContainer {
-    width: 80%;
-    height: 45vh;
-    background-color: #d9d9d9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 22px;
-    padding: 3.5rem 8.75rem;
-    color: black;
-    .imgContainerLoader {
-      position: absolute;
-      width: 20%;
-      height: 10vh;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      span {
-        position: absolute;
-        border: solid 2px rgb(0, 0, 0);
-        background-color: transparent;
-
-        border-radius: 50%;
-        @for $i from 1 through 3 {
-          &:nth-child(#{$i}) {
-            width: $i * 1.8rem;
-            height: $i * 1.8rem;
-            animation-delay: #{$i * 0.1}s;
-          }
-        }
-        animation: dotSearchingCamera 2s infinite ease-in-out;
-        animation-iteration-count: 3;
-      }
-    }
-    .imgContainerLoaded {
-      position: absolute;
-      opacity: 0;
-    }
-  }
-}
-
-.allButtonContainer {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  position: relative;
-  @mixin buttonContainer {
-    position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .singleButtonContainer {
-    @include buttonContainer();
-    z-index: 1;
-  }
-  .doubleButtonContainer {
-    @include buttonContainer();
-    gap: 1rem;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 1rem;
     opacity: 0;
-    z-index: 0;
-  }
+    animation: easyAppear 0.5s 0.4s ease-in-out forwards;
+    p {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+    .cameraImgContainer {
+        width: 80%;
+        height: 45vh;
+        background-color: #d9d9d9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 22px;
+        padding: 3.5rem 8.75rem;
+        color: black;
+        .imgContainerLoader {
+            position: absolute;
+            width: 20%;
+            height: 10vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            span {
+                border: solid 8px rgb(41, 41, 41);
+                background-color: transparent;
+                border-radius: 50%;
+                @for $i from 1 through 3 {
+                    &:nth-child(#{$i}) {
+                        animation: loadingSpan 0.7s infinite ease-in-out;
+                        animation-delay: $i * 0.1s;
+                    }
+                }
+                // animation: loadingSpan 1s infinite ease-in-out;
+                // animation-iteration-count: 3;
+            }
+        }
+        .imgContainerLoaded {
+            position: absolute;
+            opacity: 0;
+        }
+    }
+}
+
+.allButtonContainer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    @mixin buttonContainer {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .singleButtonContainer {
+        @include buttonContainer();
+        z-index: 1;
+    }
+    .doubleButtonContainer {
+        @include buttonContainer();
+        gap: 1rem;
+        opacity: 0;
+        z-index: 0;
+    }
 }
 
 @mixin baseButton {
-  width: 20.0625rem;
-  height: 3.125rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  border-radius: 0.625rem;
-  cursor: pointer;
-  p {
-    text-align: center;
-    font-family: IBM Plex Sans;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
+    width: 20.0625rem;
+    height: 3.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    p {
+        text-align: center;
+        font-family: IBM Plex Sans;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
 }
 
 .whiteButton {
-  @include baseButton;
-  border: 2px solid #ffffff;
-  background: rgba(181, 181, 181, 0.1);
-  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-  p {
-    color: #ffffff;
-  }
-  &:hover {
-    background: #ffffff;
+    @include baseButton;
+    border: 2px solid #ffffff;
+    background: rgba(181, 181, 181, 0.1);
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
     p {
-      color: #000000;
+        color: #ffffff;
     }
-  }
+    &:hover {
+        background: #ffffff;
+        p {
+            color: #000000;
+        }
+    }
 }
 .redButton {
-  @include baseButton;
-  border: 2px solid #f63c33;
-  background: rgba(246, 60, 51, 0.1);
-  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
-  p {
-    color: #f63c33;
-  }
-  &:hover {
-    background: #f63d33d7;
+    @include baseButton;
+    border: 2px solid #f63c33;
+    background: rgba(246, 60, 51, 0.1);
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
     p {
-      color: #fff;
+        color: #f63c33;
     }
-  }
+    &:hover {
+        background: #f63d33d7;
+        p {
+            color: #fff;
+        }
+    }
 }
 
 .textContainerStep2 {
-  height: 5vh;
-  width: 80%;
-  text-align: center;
-  margin-top: 1rem;
-  p {
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
+    height: 5vh;
+    width: 80%;
+    text-align: center;
+    margin-top: 1rem;
+    p {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
 }
 
 .fadeOut {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
 }
 .appear {
-  animation: appear 0.5s ease-in-out forwards;
+    animation: appear 0.5s ease-in-out forwards;
 }
 .disapear {
-  animation: appear 0.5s ease-in-out forwards reverse;
+    animation: appear 0.5s ease-in-out forwards reverse;
 }
 .easyAppear {
-  animation: easyAppear 0.5s ease-in-out forwards;
+    animation: easyAppear 0.5s ease-in-out forwards;
 }
 // .easyDisappear {
 
 // }
 
 @keyframes appear {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-    z-index: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-    z-index: 10;
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+        z-index: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+        z-index: 10;
+    }
 }
 
 @keyframes easyAppear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-@keyframes dotSearchingCamera {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  35% {
-    pacity: 0.2;
-    border: solid 2px rgba(0, 0, 0, 0.212);
-    transform: scale(3);
-  }
-  50% {
-    opacity: 0;
-    border: solid 2px rgba(0, 0, 0, 0.212);
-    transform: scale(3);
-  }
-  65% {
-    pacity: 0.2;
-    border: solid 2px rgba(0, 0, 0, 0.212);
-    transform: scale(3);
-  }
-  100% {
-    transform: scale(1);
-  }
+@keyframes loadingSpan {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(0.4rem);
+    }
+    50% {
+        transform: translateY(0.4rem);
+    }
+    90% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
+
+// @keyframes dotSearchingCamera {
+//   0% {
+//     opacity: 1;
+//     transform: scale(1);
+//   }
+//   35% {
+//     pacity: 0.2;
+//     border: solid 2px rgba(0, 0, 0, 0.212);
+//     transform: scale(3);
+//   }
+//   50% {
+//     opacity: 0;
+//     border: solid 2px rgba(0, 0, 0, 0.212);
+//     transform: scale(3);
+//   }
+//   65% {
+//     pacity: 0.2;
+//     border: solid 2px rgba(0, 0, 0, 0.212);
+//     transform: scale(3);
+//   }
+//   100% {
+//     transform: scale(1);
+//   }
+// }

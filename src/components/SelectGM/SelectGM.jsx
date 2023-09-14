@@ -10,7 +10,10 @@ export const SelectGM = ({ name, label, data }) => {
 
     useEffect(() => {
         const handleOutsideClick = (event) => {
-            if (containerRef.current && !containerRef.current.contains(event.target)) {
+            if (
+                containerRef.current &&
+                !containerRef.current.contains(event.target)
+            ) {
                 setOpenMenu(false);
             }
         };
@@ -32,15 +35,37 @@ export const SelectGM = ({ name, label, data }) => {
     return (
         <div className="container testContainer" ref={containerRef}>
             <label htmlFor={name}>{label}</label>
-            <ul name={name} id={name} className="containerUL" onClick={() => openMenuOnClick()}>
+            <ul
+                name={name}
+                id={name}
+                className="containerUL"
+                onClick={() => openMenuOnClick()}
+            >
                 <li>{selectedGenre}</li>
-                <div className={`arrowContainer ${openMenue ? "open" : "close"}`}>
-                    <Image src="/arrowLeftDirection.svg" alt="arrow" fill={true} />
+                <div
+                    className={`arrowContainer ${openMenue ? "open" : "close"}`}
+                >
+                    <Image
+                        src="/arrowLeftDirection.svg"
+                        alt="arrow"
+                        fill={true}
+                    />
                 </div>
             </ul>
-            <ul name={name} id={name} className={`containerULABS ${openMenue ? "openMenue" : "closeMenue"}`}>
+            <ul
+                name={name}
+                id={name}
+                className={`containerULABS ${
+                    openMenue ? "openMenue" : "closeMenue"
+                }`}
+            >
                 {data.map((option) => (
-                    <li value={option} key={option} className="listData" onClick={() => openMenuOnClick(option)}>
+                    <li
+                        value={option}
+                        key={option}
+                        className="listData"
+                        onClick={() => openMenuOnClick(option)}
+                    >
                         {option}
                     </li>
                 ))}

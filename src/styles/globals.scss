@@ -1,11 +1,10 @@
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Red+Rose:wght@400;500;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Red+Rose:wght@400;500;700&display=swap");
 
 html,
 body,
@@ -58,16 +57,16 @@ header,
 nav,
 section,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  text-size-adjust: none;
-  font-family: "IBM Plex Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+    font-family: "IBM Plex Sans", sans-serif;
 }
 
 footer,
@@ -75,46 +74,46 @@ header,
 nav,
 section,
 main {
-  display: block;
+    display: block;
 }
 
 body {
-  line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+    content: "";
+    content: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 input {
-  -webkit-appearance: none;
-  border-radius: 0;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 body {
-  background-color: rgb(0, 0, 0);
-  color: rgb(241, 241, 241);
-  a {
+    background-color: rgb(0, 0, 0);
     color: rgb(241, 241, 241);
-    text-decoration: none;
-  }
+    a {
+        color: rgb(241, 241, 241);
+        text-decoration: none;
+    }
 }
