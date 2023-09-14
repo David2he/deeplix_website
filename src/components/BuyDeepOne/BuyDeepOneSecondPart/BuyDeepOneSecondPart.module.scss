@@ -109,12 +109,7 @@
             span {
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}) {
-                        animation: easyAppear
-                            0.5s
-                            ease-in
-                            infinite
-                            #{$i *
-                            0.1}s;
+                        animation: easyAppear 0.5s ease-in infinite #{$i * 0.1}s;
                     }
                 }
             }
@@ -123,12 +118,7 @@
             span {
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}) {
-                        animation: easyDisappear
-                            0.8s
-                            ease-in
-                            forwards
-                            #{$i *
-                            -0.3}s;
+                        animation: easyDisappear 0.8s ease-in forwards #{$i * -0.3}s;
                     }
                 }
             }
@@ -235,15 +225,35 @@
 
 .container8and9 {
     width: 100%;
-}
-.videoWrapper {
     display: flex;
     justify-content: center;
-
-    height: 60vh;
-}
-.fullscreenVideo {
-    width: 40vw;
+    align-items: center;
+    flex-direction: column;
+    .hiddenRedButton {
+        opacity: 0;
+        @include baseButton;
+        border: 2px solid #f63c33;
+        background: rgba(246, 60, 51, 0.1);
+        transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+        p {
+            color: #f63c33;
+        }
+        &:hover {
+            background: #f63d33d7;
+            p {
+                color: #fff;
+            }
+        }
+    }
+    .videoWrapper {
+        display: flex;
+        justify-content: center;
+        height: 50vh;
+    }
+    .fullscreenVideo {
+        width: 40vw;
+        height: 40vh;
+    }
 }
 
 @keyframes easyDisappear {
