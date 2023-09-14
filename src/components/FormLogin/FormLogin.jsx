@@ -8,11 +8,7 @@ export const FormLogin = () => {
     const [openModal, setOpenModal] = useState(false);
     return (
         <div className={style.formContainer}>
-          {openModal && (
-            <div className={style.modal}>
-              
-            </div>
-          )}
+            {openModal && <div className={style.modal}></div>}
             <div className={style.logoContainer}>
                 <Image src="/DeepflixText.svg" alt="logo" fill={true} />
             </div>

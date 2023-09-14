@@ -10,7 +10,9 @@ export default function Home() {
     return (
         <main className={style.mainContainer}>
             <WelcomTextFirstPage type={type} />
-            <CarrouselPicturesFirstPage />
+            <div className={style.carrouselContainer}>
+                <CarrouselPicturesFirstPage />
+            </div>
         </main>
     );
 }
