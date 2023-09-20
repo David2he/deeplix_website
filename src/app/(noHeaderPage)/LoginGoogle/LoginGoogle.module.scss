@@ -1,0 +1,141 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+    }
+    span {
+        color: #477ce3;
+    }
+    .googleCardContainer {
+        width: 35%;
+        border-radius: 8px;
+        border: solid 0.5px rgb(212, 212, 212);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        color: #606367;
+    }
+}
+
+.headerPart {
+    width: 100%;
+    border-bottom: solid 0.5px rgb(212, 212, 212);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0.8rem 1rem;
+    .headerPartImgContainer {
+        width: 1.3rem;
+        height: 1.3rem;
+        position: relative;
+    }
+    p {
+        font-weight: 500;
+        color: #7f7f7f;
+    }
+}
+
+.mainPart {
+    width: 100%;
+    padding: 4rem 4rem 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    .headMainPart {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 4rem;
+
+        p {
+            color: rgb(57, 57, 57);
+        }
+
+        p:nth-child(2) {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+        p:nth-child(3) {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        .headMainPartImgContainer {
+            width: 4rem;
+            height: 4rem;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+    }
+    .bodyMainPart {
+        width: 100%;
+
+        .displayUser {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: solid 0.5px rgb(186, 186, 186);
+            padding: 1rem 0;
+            cursor: pointer;
+            .displayUserPartImgContainer {
+                position: relative;
+                width: 2.3rem;
+                height: 2.3rem;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+            .displayUserPartTextContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+                .userName {
+                    color: rgb(57, 57, 57);
+                    font-weight: bold;
+                }
+                .userMail {
+                    color: #7f7f7f;
+                }
+            }
+        }
+    }
+}
+
+.footerMainPart {
+    padding: 2rem 0;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+.underCardInfo {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+    }
+    div {
+        padding-top: 2rem;
+        display: flex;
+        gap: 2rem;
+        color: rgb(57, 57, 57);
+    }
+}

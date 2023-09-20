@@ -2,6 +2,7 @@
 import { useState } from "react";
 import style from "./Login.module.scss";
 import { FormLogin } from "@/components/FormLogin/FormLogin";
+import "@/styles/bodyColorBlack.scss";
 
 export default function Home() {
     const [videoEnded, setVideoEnded] = useState(false);
@@ -24,7 +25,7 @@ export default function Home() {
                         muted
                         autoPlay
                     >
-                        <source src="/DEEPFLIX_INTROWEBSITE.mp4" />
+                        <source src="/INTRO_WEBSITE_V2.mp4" />
                     </video>
                 </div>
             )}

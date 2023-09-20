@@ -1,0 +1,24 @@
+// body {
+//     height: 9vh !important;
+//     border-radius: 8px !important;
+//     border: solid 4px rgb(255, 44, 44) !important;
+//     overflow: hidden !important;
+//     height: 100vh !important;
+// }
+
+body {
+    height: 9vh !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    height: 100vh !important;
+}
+
+body.redBorder {
+    transition: 0.4s;
+    border: solid 4px rgb(255, 44, 44) !important;
+}
+
+body.whiteBorder {
+    transition: 1s;
+    border: solid 4px rgb(255, 255, 255) !important;
+}

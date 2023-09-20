@@ -109,7 +109,12 @@
             span {
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}) {
-                        animation: easyAppear 0.5s ease-in infinite #{$i * 0.1}s;
+                        animation: easyAppear
+                            0.5s
+                            ease-in
+                            infinite
+                            #{$i *
+                            0.1}s;
                     }
                 }
             }
@@ -118,7 +123,12 @@
             span {
                 @for $i from 1 through 3 {
                     &:nth-child(#{$i}) {
-                        animation: easyDisappear 0.8s ease-in forwards #{$i * -0.3}s;
+                        animation: easyDisappear
+                            0.8s
+                            ease-in
+                            forwards
+                            #{$i *
+                            -0.3}s;
                     }
                 }
             }
@@ -253,6 +263,9 @@
     .fullscreenVideo {
         width: 40vw;
         height: 40vh;
+    }
+    .disappearVideoContainer {
+        animation: easyDisappear 0.3s ease-in forwards;
     }
 }
 

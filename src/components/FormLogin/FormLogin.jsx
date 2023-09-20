@@ -1,4 +1,5 @@
 "use client";
+
 import style from "./FormLogin.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,13 +31,16 @@ export const FormLogin = () => {
                 <span></span>
             </div>
             <div className={style.signInImageContainer}>
-                <button type="button" className={style.loginButtonGoogle} onClick={() => setOpenModal(true)}>
+                <Link href={"/LoginGoogle"} className={style.loginButtonGoogle}>
                     Sign in with Google
-                </button>
+                </Link>
             </div>
             <p className={style.lillTextInfo}>
-                I understand that my information will be used in accordance with Deepflix’s{" "}
-                <span className={style.lillTextInfoUnderline}>Privacy Policy</span>
+                I understand that my information will be used in accordance with
+                Deepflix’s
+                <span className={style.lillTextInfoUnderline}>
+                    Privacy Policy
+                </span>
             </p>
         </div>
     );

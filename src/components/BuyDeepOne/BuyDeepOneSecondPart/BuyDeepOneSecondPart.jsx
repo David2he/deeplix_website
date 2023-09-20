@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 export const BuyDeepOneSecondPart = ({ step, setStep }) => {
     const [canAppear, setCanAppear] = useState(false);
     const [finisTextGeneration, setFinisTextGeneration] = useState(false);
-    const [inBetweenFinishTextGeneration, setInBetweenFinishTextGeneration] = useState(true);
+    const [inBetweenFinishTextGeneration, setInBetweenFinishTextGeneration] =
+        useState(true);
     const [appearBlock6to7, setAppearBlock6to7] = useState(false);
     const [appearBlock7to8, setAppearBlock7to8] = useState(false);
     const [appearBlock8to9, setAppearBlock8to9] = useState(false);
@@ -35,8 +36,14 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
     const renderBetween4And5 = () => {
         return (
             <div className={style.container4And5}>
-                <p>Place yourself in front of the camera and we'll proceed to scan your facial expressions.</p>
-                <div className={style.redButton} onClick={() => navigateThrougStep("forward")}>
+                <p>
+                    Place yourself in front of the camera and we'll proceed to
+                    scan your facial expressions.
+                </p>
+                <div
+                    className={style.redButton}
+                    onClick={() => navigateThrougStep("forward")}
+                >
                     <p>CONTINUE</p>
                 </div>
             </div>
@@ -46,14 +53,35 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
         return (
             <div className={style.container5And6}>
                 <div className={style.scanningPContainer}>
-                    <p className={inBetweenFinishTextGeneration ? null : style.finishScanning}> Scanning</p>
-                    <div className={inBetweenFinishTextGeneration ? style.isScanningDOT : style.finishScanningDOT}>
+                    <p
+                        className={
+                            inBetweenFinishTextGeneration
+                                ? null
+                                : style.finishScanning
+                        }
+                    >
+                        {" "}
+                        Scanning
+                    </p>
+                    <div
+                        className={
+                            inBetweenFinishTextGeneration
+                                ? style.isScanningDOT
+                                : style.finishScanningDOT
+                        }
+                    >
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
                 </div>
-                <ul className={inBetweenFinishTextGeneration ? style.appearLi : style.disappearLi}>
+                <ul
+                    className={
+                        inBetweenFinishTextGeneration
+                            ? style.appearLi
+                            : style.disappearLi
+                    }
+                >
                     <li>Measurements</li>
                     <li>Expressions</li>
                     <li>Ethnicity European</li>
@@ -74,19 +102,44 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
 
     const renderBetween6And7 = () => {
         return (
-            <div className={` ${style.container6And7} ${appearBlock7to8 && style.disappearcontainer6And7}`}>
-                <div className={`${style.titleText} ${appearBlock6to7 ? null : style.block67CanAppear}`}>
-                    <p>Please read this excerpt from Fight Club®, 1999, David Fincher out loud, articulating :</p>
+            <div
+                className={` ${style.container6And7} ${
+                    appearBlock7to8 && style.disappearcontainer6And7
+                }`}
+            >
+                <div
+                    className={`${style.titleText} ${
+                        appearBlock6to7 ? null : style.block67CanAppear
+                    }`}
+                >
+                    <p>
+                        Please read this excerpt from Fight Club®, 1999, David
+                        Fincher out loud, articulating :
+                    </p>
                 </div>
-                <div className={`${style.italicTextContainer} ${appearBlock6to7 ? null : style.block67CanAppear}`}>
+                <div
+                    className={`${style.italicTextContainer} ${
+                        appearBlock6to7 ? null : style.block67CanAppear
+                    }`}
+                >
                     <p id="italicText" className={style.italicText}>
-                        Warning: If you are reading this then thiswarning is for you. Every word you read of this useless fine
-                        print is another second of your life. Don't you have other things to do? Is your life so empty that you
-                        honestly can't think etter way to spend these moments? Or are you so impressed with authority that you
-                        give respect and credence to all that claim it? Do you read everything you're supposed to read? Do you
-                        think every thing you're supposed to think? Buy what you're told to want? Get out of your apartment. Meet
-                        a member of the opposite sex. Stop the excessive shopping and masturbation. Quit your job. Start a fight.
-                        Prove you're alive. If you don't claim your humanity you will become a statistic.
+                        Avertissement: Si vous lisez ceci, alors cet
+                        avertissement est pour vous. Chaque mot que vous lisez
+                        de ce texte inutile est une autre seconde perdue dans
+                        votre vie. N'avez-vous rien d'autre à faire ? Votre vie
+                        est-elle si vide que, honnêtement, vous ne puissiez
+                        penser à une meilleure manière de passer ces moments ?
+                        Ou êtes-vous si impressionné par l'autorité que vous
+                        donnez votre respect et vouez votre foi à tous ceux qui
+                        s'en réclament ? Lisez-vous tout ce que vous êtes
+                        supposés lire ? Pensez-vous tout ce que vous êtes
+                        supposés penser ? Achetez-vous ce que l'on vous dit
+                        d'acheter ? Sortez de votre appartement. Allez à la
+                        rencontre du sexe opposé. Arrêtez le shopping excessif
+                        et la masturbation. Quittez votre travail. Commencez à
+                        vous battre. Prouvez que vous êtes en vie. Si vous ne
+                        revendiquez pas votre humanité, vous deviendrez une
+                        statistique. Vous êtes prévenu...
                     </p>
                 </div>
             </div>
@@ -96,9 +149,19 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
     const renderBetween7And8 = () => {
         return (
             <>
-                <div className={`${style.container7and8} ${appearBlock7to8 && style.appearBlock7to8}`}>
-                    <p>Now step back a few meters and blink when you're in position to calibrate your movements.</p>
-                    <div className={style.redButton} onClick={() => navigateThrougStep("forward")}>
+                <div
+                    className={`${style.container7and8} ${
+                        appearBlock7to8 && style.appearBlock7to8
+                    }`}
+                >
+                    <p>
+                        Now step back a few meters and blink when you're in
+                        position to calibrate your movements.
+                    </p>
+                    <div
+                        className={style.redButton}
+                        onClick={() => navigateThrougStep("forward")}
+                    >
                         <p>CONTINUE</p>
                     </div>
                 </div>
@@ -109,14 +172,25 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
         console.log(step);
         return (
             <>
-                <div className={`${style.container8and9} ${appearBlock8to9 && style.appearBlock7to8}`}>
-                    <div className={style.videoWrapper}>
+                <div
+                    className={`${style.container8and9} ${
+                        appearBlock8to9 && style.appearBlock7to8
+                    }`}
+                >
+                    <div
+                        className={`${style.videoWrapper} ${
+                            appearContinueButton &&
+                            style.disappearVideoContainer
+                        }`}
+                    >
                         <video autoPlay muted className={style.fullscreenVideo}>
-                            <source src="/tracking.MP4" />
+                            <source src="/SCANMOTIONCAPTURE.MP4" />
                         </video>
                     </div>
                     <div
-                        className={`${style.hiddenRedButton} ${appearContinueButton && style.appearBlock7to8}`}
+                        className={`${style.hiddenRedButton} ${
+                            appearContinueButton && style.appearBlock7to8
+                        }`}
                         onClick={() => navigateThrougStep("forward")}
                     >
                         Continue
@@ -181,9 +255,8 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
         }
         if (step === 8) {
             timerForStep8_1 = setTimeout(() => {
-                console.log("ok" + appearContinueButton);
                 setAppearContinueButton(true);
-            }, 2500);
+            }, 14000); // en seconde ca donne 15
         }
         return () => {
             clearTimeout(timerForStep4);
@@ -200,7 +273,9 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
 
     return (
         <div className={style.container}>
-            <div className={`${canAppear ? style.canAppear : style.stayHidden}`}>
+            <div
+                className={`${canAppear ? style.canAppear : style.stayHidden}`}
+            >
                 {step === 4
                     ? renderBetween4And5()
                     : step === 5

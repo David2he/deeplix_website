@@ -66,7 +66,7 @@ export const GeneratedText = ({ content, index, setFinisTextGeneration }) => {
             generateRandomNumber(false);
             clearInterval(interval);
             setFinisTextGeneration(true);
-        }, 6000);
+        }, 4000);
 
         return () => {
             clearTimeout(canGenerateTimer);

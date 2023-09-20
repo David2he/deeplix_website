@@ -1,5 +1,6 @@
 import { FormGM } from "@/components/FormGM/FormGM";
 import style from "./generatedMovie.module.scss";
+import "@/styles/bodyColorWhite.scss";
 export default function GeneratedMovie() {
     return (
         <div className={style.container}>
