@@ -16,6 +16,8 @@
         color: #477ce3;
     }
     .googleCardContainer {
+        opacity: 0;
+        animation: entry 1s ease-in-out forwards;
         width: 35%;
         border-radius: 8px;
         border: solid 0.5px rgb(212, 212, 212);
@@ -137,5 +139,19 @@
         display: flex;
         gap: 2rem;
         color: rgb(57, 57, 57);
+    }
+}
+
+@keyframes entry {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
     }
 }

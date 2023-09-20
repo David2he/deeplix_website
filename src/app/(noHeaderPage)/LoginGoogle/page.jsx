@@ -24,7 +24,7 @@ export default function LoginGoogle() {
                                 src={"./googleImgs/svgGoogleFormLogo.svg"}
                                 alt="Google Logo"
                                 fill={true}
-                                quality={100}
+                                quality={50}
                                 className={style.img}
                             />
                         </div>
@@ -50,7 +50,7 @@ export default function LoginGoogle() {
                                         src={"/googleImgs/userPics.jpg"}
                                         alt="User Logo"
                                         fill={true}
-                                        quality={100}
+                                        quality={50}
                                         className={style.img}
                                     />
                                 </div>

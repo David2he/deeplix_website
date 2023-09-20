@@ -17,6 +17,7 @@ export const WelcomTextFirstPage = ({ type }) => {
                             alt="Deeplix Logo"
                             fill={true}
                             quality={100}
+                            loading="lazy"
                         />
                     </div>
                 ) : null}
