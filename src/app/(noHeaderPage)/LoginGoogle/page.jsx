@@ -25,6 +25,7 @@ export default function LoginGoogle() {
                                 alt="Google Logo"
                                 fill={true}
                                 quality={50}
+                                loading="lazy"
                                 className={style.img}
                             />
                         </div>
@@ -51,6 +52,7 @@ export default function LoginGoogle() {
                                         alt="User Logo"
                                         fill={true}
                                         quality={50}
+                                        loading="lazy"
                                         className={style.img}
                                     />
                                 </div>
@@ -68,22 +70,37 @@ export default function LoginGoogle() {
                                 </div>
                             </div>
                         </Link>
-                        <div className={style.displayUser}>
-                            <div className={style.displayUserPartImgContainer}>
-                                <Image
-                                    src={"/googleImgs/userIcon.svg"}
-                                    alt="User Logo"
-                                    fill={true}
-                                    quality={100}
-                                    className={style.img}
-                                />
+                        <Link
+                            href={{
+                                pathname: "/welcome",
+                                query: { type: "0" },
+                            }}
+                        >
+                            <div className={style.displayUser}>
+                                <div
+                                    className={
+                                        style.displayUserPartImgContainer
+                                    }
+                                >
+                                    <Image
+                                        src={"/googleImgs/userIcon.svg"}
+                                        alt="User Logo"
+                                        fill={true}
+                                        quality={100}
+                                        className={style.img}
+                                    />
+                                </div>
+                                <div
+                                    className={
+                                        style.displayUserPartTextContainer
+                                    }
+                                >
+                                    <p className={style.userName}>
+                                        Use another Info
+                                    </p>
+                                </div>
                             </div>
-                            <div className={style.displayUserPartTextContainer}>
-                                <p className={style.userName}>
-                                    Use another Info
-                                </p>
-                            </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className={style.footerMainPart}>
                         <p>
