@@ -16,8 +16,6 @@ export const CarrouselPicturesFirstPage = () => {
                 ) {
                     carrouselRef.current.scrollLeft = 0;
                 }
-                console.log(interval);
-                console.log(carrouselRef.current.scrollLeft);
             }
         }, 30);
 
