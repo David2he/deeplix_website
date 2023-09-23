@@ -66,7 +66,7 @@ export const GeneratedText = ({ content, index, setFinisTextGeneration }) => {
             generateRandomNumber(false);
             clearInterval(interval);
             setFinisTextGeneration(true);
-        }, 20000);
+        }, 24000); // TODO: change to 24000
 
         return () => {
             clearTimeout(canGenerateTimer);
@@ -77,7 +77,7 @@ export const GeneratedText = ({ content, index, setFinisTextGeneration }) => {
 
     return (
         <>
-            <li>
+            <li className={style.liContainer}>
                 <p>{content} :</p>
                 <p className={style.numberRatio}>
                     {generatedNumber}{" "}

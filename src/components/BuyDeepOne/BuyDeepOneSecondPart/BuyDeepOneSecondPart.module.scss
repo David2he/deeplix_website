@@ -76,16 +76,18 @@
 }
 
 .container5And6 {
-    width: 100%;
+    width: 120%;
     animation: easyAppear 0.5s ease-in-out forwards;
-    font-size: 20px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    margin-left: 12rem;
     .scanningPContainer {
         display: flex;
         align-items: flex-end;
-        gap: 6px;
+        gap: 10px;
         p {
             text-align: left;
         }
@@ -156,7 +158,9 @@
             line-height: normal;
         }
     }
-
+    .ulContainer li {
+        font-size: 22px;
+    }
     .appearLi li {
         opacity: 0;
 
@@ -178,6 +182,11 @@
         color: rgb(184, 184, 184);
         margin-left: 0.5rem;
     }
+    .liContainer {
+        p {
+            font-size: 22px !important;
+        }
+    }
 }
 
 .container6And7 {
@@ -198,7 +207,7 @@
 
         .italicText {
             font-family: "IBM Plex Mono", monospace;
-            font-size: 20px;
+            font-size: 19px;
             font-style: italic;
             font-weight: 300;
             line-height: normal;
@@ -261,11 +270,18 @@
         height: 50vh;
     }
     .fullscreenVideo {
-        width: 40vw;
-        height: 40vh;
+        position: absolute;
+        top: 15%;
+        width: 60vw;
+        height: 60vh;
     }
     .disappearVideoContainer {
         animation: easyDisappear 0.3s ease-in forwards;
+    }
+    .container8and9 {
+        opacity: 0;
+        position: absolute;
+        top: 150%;
     }
 }
 

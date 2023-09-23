@@ -15,16 +15,20 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
     const [testSkip, setTestSkip] = useState(false);
 
     const randomNumberContent = [
+        "Smile",
+        "Browraise",
         "InnerBrownRaise",
         "LipPress",
         "LipPucker",
         "Attention",
-        "Fear",
-        "Surprise",
-        "Valences",
-        "Engagement",
+        "Eye Closure",
         "Joy",
+        "Fear",
+        "Sadness",
         "Disgust",
+        "Surprise",
+        "Valence",
+        "Engagement",
     ];
 
     const handleKeyDown = (event) => {
@@ -76,15 +80,15 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
                     </div>
                 </div>
                 <ul
-                    className={
-                        inBetweenFinishTextGeneration
-                            ? style.appearLi
-                            : style.disappearLi
-                    }
+                    className={` ${style.ulContainer}
+                        ${
+                            inBetweenFinishTextGeneration
+                                ? style.appearLi
+                                : style.disappearLi
+                        }`}
                 >
-                    <li>Measurements</li>
-                    <li>Expressions</li>
-                    <li>Ethnicity European</li>
+                    <li>Expressions :</li>
+
                     {randomNumberContent.map((content, index) => {
                         return (
                             <GeneratedText
@@ -177,6 +181,13 @@ export const BuyDeepOneSecondPart = ({ step, setStep }) => {
                         appearBlock8to9 && style.appearBlock7to8
                     }`}
                 >
+                    <p
+                        className={`${style.scanningIsDoneText} ${
+                            appearContinueButton && style.appearBlock7to8
+                        }`}
+                    >
+                        Scanning is done!
+                    </p>
                     <div
                         className={`${style.videoWrapper} ${
                             appearContinueButton &&
