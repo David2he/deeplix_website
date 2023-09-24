@@ -1,8 +1,8 @@
 import "../../styles/globals.scss";
 
 export const metadata = {
-    title: "Create Next App",
-    description: "Deeplix website",
+    title: "DEEPFLIX",
+    description: "DeepFlix website",
 };
 
 export default function NoHeaderPage({ children }) {

@@ -14,7 +14,7 @@ export const WelcomTextFirstPage = ({ type }) => {
                     <div>
                         <Image
                             src={"./DeepflixText.svg"}
-                            alt="Deeplix Logo"
+                            alt="DeepFlix Logo"
                             fill={true}
                             quality={100}
                             loading="lazy"

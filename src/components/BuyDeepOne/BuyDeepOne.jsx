@@ -44,21 +44,36 @@ export const BuyDeepOne = () => {
             {step === 9 ? (
                 renderFinal()
             ) : (
-                <div className={`${step >= 4 && style.containerSwapPart} ${style.container}`}>
+                <div
+                    className={`${step >= 4 && style.containerSwapPart} ${
+                        style.container
+                    }`}
+                >
                     <div className={style.closeCross}>
                         <div className={style.spanContainer}>
                             <span></span>
                             <span></span>
                         </div>
                     </div>
-                    {step >= 4 && <p className={style.stepInfo}>{stepToDisplay} / 4</p>}
+                    {step >= 4 && (
+                        <p className={style.stepInfo}>{stepToDisplay} / 4</p>
+                    )}
                     <div className={style.logoContainer}>
-                        <Image src="/buyDeepOne/buyDeepOneLogo.png" alt="logo" fill={true} />
+                        <Image
+                            src="/buyDeepOne/buyDeepOneLogo.png"
+                            alt="logo"
+                            fill={true}
+                        />
                     </div>
-                    {step <= 3 && <BuyDeepOneFirstPart step={step} setStep={setStep} />}
-                    {step >= 4 && <BuyDeepOneSecondPart step={step} setStep={setStep} />}
+                    {step <= 3 && (
+                        <BuyDeepOneFirstPart step={step} setStep={setStep} />
+                    )}
+                    {step >= 4 && (
+                        <BuyDeepOneSecondPart step={step} setStep={setStep} />
+                    )}
                     <p className={style.footer}>
-                        I understand that my information will be used in accordance with Deepflix’s <span>Privacy Policy</span>
+                        I understand that my information will be used in
+                        accordance with Deepflix’s <span>Privacy Policy</span>
                     </p>
                 </div>
             )}

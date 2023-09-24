@@ -2,8 +2,8 @@ import "../../styles/globals.scss";
 import { Header } from "../../components/Header/Header";
 
 export const metadata = {
-    title: "Create Next App",
-    description: "Deeplix website",
+    title: "DEEPFLIX",
+    description: "DeepFlix website",
 };
 
 export default function HeaderPage({ children }) {

@@ -9,7 +9,7 @@ export default function LoginGoogle() {
                     <div className={style.headerPartImgContainer}>
                         <Image
                             src={"./googleImgs/miniGoogleIcon.svg"}
-                            alt="Deeplix Logo"
+                            alt="DeepFlix Logo"
                             fill={true}
                             quality={100}
                             className={style.img}

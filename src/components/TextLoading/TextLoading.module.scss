@@ -1,147 +1,147 @@
 .container {
-  margin: 0 auto;
-  width: 60vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  .imgContainer {
-    position: relative;
-    height: 15vh;
-    width: 10vw;
-    padding-bottom: 0.9375rem;
-    animation-delay: calc(0.8s + 1.8s);
-
-    .iconLoader {
-      width: 100%;
-
-    }
-  }
-
-  .loadingPercentageContainer {
-    padding-top: 2rem;
-    animation-delay: calc(0.6s + 1.8s);
-  }
-
-  .loadingTitleContainer {
+    margin: 0 auto;
     width: 60vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    position: relative;
-    padding-bottom: 5rem;
-    animation-delay: calc(0.25s + 1.8s);
-
-    .inGenerationTitle {
-      bottom: 20%;
-      position: absolute;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .titleText {
-      color: #fff;
-      text-align: center;
-      font-family: IBM Plex Sans;
-      font-size: 25px;
-      font-weight: 500;
-    }
-
-    .spanContainer {
-      transform: translateY(0.3rem);
-      display: flex;
-      gap: 4px;
-
-      span {
-        width: 06px;
-        height: 06px;
-        border-radius: 50%;
-        background-color: white;
-      }
-    }
-  }
-
-  .loadingGeneratedTextContainer {
-    overflow: hidden;
-    text-align: center;
-    height: 10vh;
-    width: 40vw;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    animation-delay: calc(0s + 1.8s);
-    color: #bfbfbf;
-    text-align: center;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-  }
 
-  .appearDoneTitle {
-    animation: appearDoneTitle 0.8s 0.4s ease-in-out forwards;
-  }
+    .imgContainer {
+        position: relative;
+        height: 15vh;
+        width: 10vw;
+        padding-bottom: 0.9375rem;
+        animation-delay: calc(0.8s + 1.8s);
 
-  .filmGenerationDoneTitle {
-    bottom: 20%;
-    position: absolute;
-    opacity: 0;
-  }
-
-  .loadedSPan {
-    @for $i from 1 through 3 {
-      &:nth-child(#{$i}) {
-        animation: spanLoader 0.9s ease-in-out infinite;
-        animation-delay: $i * 0.2s;
-      }
+        .iconLoader {
+            width: 100%;
+        }
     }
-  }
 
-  .finisLoadedSpan {
-    animation: endSpanLoader 0.9s ease-in-out forwards;
-  }
+    .loadingPercentageContainer {
+        padding-top: 2rem;
+        animation-delay: calc(0.6s + 1.8s);
+    }
+
+    .loadingTitleContainer {
+        width: 60vw;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding-bottom: 3rem;
+        animation-delay: calc(0.25s + 1.8s);
+
+        .inGenerationTitle {
+            bottom: 20%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .titleText {
+            color: #fff;
+            text-align: center;
+            font-family: IBM Plex Sans;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .spanContainer {
+            transform: translateY(0.3rem);
+            display: flex;
+            gap: 4px;
+
+            span {
+                width: 06px;
+                height: 06px;
+                border-radius: 50%;
+                background-color: white;
+            }
+        }
+    }
+
+    .loadingGeneratedTextContainer {
+        overflow: hidden;
+        text-align: center;
+        height: 10vh;
+        width: 40vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation-delay: calc(0s + 1.8s);
+        color: #bfbfbf;
+        text-align: center;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    .appearDoneTitle {
+        animation: appearDoneTitle 0.8s 0.4s ease-in-out forwards;
+    }
+
+    .filmGenerationDoneTitle {
+        bottom: 20%;
+        position: absolute;
+        opacity: 0;
+    }
+
+    .loadedSPan {
+        @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+                animation: spanLoader 0.9s ease-in-out infinite;
+                animation-delay: $i * 0.2s;
+            }
+        }
+    }
+
+    .finisLoadedSpan {
+        animation: endSpanLoader 0.9s ease-in-out forwards;
+    }
 }
 
 .finisLoaded {
-  animation: removeAfterLoading 0.6s ease-in-out forwards;
+    animation: removeAfterLoading 0.6s ease-in-out forwards;
 }
 
 @keyframes spanLoader {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
 @keyframes endSpanLoader {
-  100% {
-    opacity: 0;
-    transition: opacity 1s;
-  }
+    100% {
+        opacity: 0;
+        transition: opacity 1s;
+    }
 }
 
 @keyframes removeAfterLoading {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(0.75rem);
-  }
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0.75rem);
+    }
 }
 
 @keyframes appearDoneTitle {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+    }
 }

@@ -283,6 +283,9 @@
         position: absolute;
         top: 150%;
     }
+    .scanningIsDoneText {
+        opacity: 0;
+    }
 }
 
 @keyframes easyDisappear {
