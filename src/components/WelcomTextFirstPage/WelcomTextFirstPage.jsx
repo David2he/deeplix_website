@@ -29,7 +29,7 @@ export const WelcomTextFirstPage = ({ type }) => {
             </p>
             <Link href={type === "0" ? "/generatMovie" : "/deepOnePage"}>
                 <div className={style.startButton}>
-                    <p>{type === "0" ? "START" : "CONNECT DEEP-O1"}</p>
+                    <p>{type === "0" ? "START" : "BUY DEEP-O1"}</p>
                 </div>
             </Link>
         </div>

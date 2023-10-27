@@ -24,7 +24,7 @@ export const CarrouselPicturesFirstPage = () => {
 
     return (
         <div className={style.container}>
-            <p>Generated for you</p>
+            <p>Already generated</p>
             <div className={style.carrouselContainer} ref={carrouselRef}>
                 {Array.from({ length: imagesLength * 2 }, (_, index) => (
                     <img
