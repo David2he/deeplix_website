@@ -5,11 +5,7 @@ export const WelcomTextFirstPage = ({ type }) => {
     return (
         <div className={style.WelcomTextContainer}>
             <div className={style.titleImageContainer}>
-                <h1>
-                    {type === "0"
-                        ? "Hello Théo, welcome to"
-                        : "Play in your own movie"}
-                </h1>
+                <h1>{type === "0" ? "Hello Théo, welcome to" : "Play in your own movie"}</h1>
                 {type === "0" ? (
                     <div>
                         <Image
@@ -29,7 +25,7 @@ export const WelcomTextFirstPage = ({ type }) => {
             </p>
             <Link href={type === "0" ? "/generatMovie" : "/deepOnePage"}>
                 <div className={style.startButton}>
-                    <p>{type === "0" ? "START" : "BUY DEEP-O1"}</p>
+                    <p>{type === "0" ? "START" : "CONNECT DEEP-O1"}</p>
                 </div>
             </Link>
         </div>
