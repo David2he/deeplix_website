@@ -8,13 +8,7 @@ export const Header = ({ imageSource }) => {
             <Link href={"./welcome"}>
                 <p>Menu</p>
             </Link>
-            <Image
-                src={imageSource}
-                alt="DeepFlix Logo"
-                width={100}
-                height={100}
-                quality={100}
-            />
+            <Image src={imageSource} alt="DeepFlix Logo" width={100} height={100} quality={100} />
             <div className={style.userNameContainer}>
                 <div className={style.imgContainer}>
                     <Image src={"./arrowIcon.svg"} fill={true} />

@@ -23,25 +23,16 @@ export const TextLoading = ({ endLoading }) => {
 
     useEffect(() => {
         const generateRandomText = () => {
-            const randomAction =
-                action[Math.floor(Math.random() * action.length)];
-            const randomAction1 =
-                action[Math.floor(Math.random() * action.length)];
-            const randomAction2 =
-                action[Math.floor(Math.random() * action.length)];
-            const randomSubject =
-                subject[Math.floor(Math.random() * subject.length)];
-            const randomSubject1 =
-                subject[Math.floor(Math.random() * subject.length)];
-            const randomSubject2 =
-                subject[Math.floor(Math.random() * subject.length)];
+            const randomAction = action[Math.floor(Math.random() * action.length)];
+            const randomAction1 = action[Math.floor(Math.random() * action.length)];
+            const randomAction2 = action[Math.floor(Math.random() * action.length)];
+            const randomSubject = subject[Math.floor(Math.random() * subject.length)];
+            const randomSubject1 = subject[Math.floor(Math.random() * subject.length)];
+            const randomSubject2 = subject[Math.floor(Math.random() * subject.length)];
             const randomTools = tools[Math.floor(Math.random() * tools.length)];
-            const randomTools1 =
-                tools[Math.floor(Math.random() * tools.length)];
-            const randomParameters =
-                parameters[Math.floor(Math.random() * parameters.length)];
-            const randomParameters1 =
-                parameters[Math.floor(Math.random() * parameters.length)];
+            const randomTools1 = tools[Math.floor(Math.random() * tools.length)];
+            const randomParameters = parameters[Math.floor(Math.random() * parameters.length)];
+            const randomParameters1 = parameters[Math.floor(Math.random() * parameters.length)];
 
             return `${randomAction}/${randomSubject}/${randomTools}/${randomParameters}/${randomAction} _ ${randomSubject2}/${randomParameters1} ..${randomAction2}/${randomParameters}/${randomAction1}/${randomSubject1}/${randomTools1} &//:: ${randomAction2} : ${randomSubject2}`;
         };
@@ -56,17 +47,11 @@ export const TextLoading = ({ endLoading }) => {
 
         const updateText = () => {
             setGeneratedText(generateRandomText());
-            timeoutIdRef.current = setTimeout(
-                updateText,
-                generateIntervalDuration()
-            );
+            timeoutIdRef.current = setTimeout(updateText, generateIntervalDuration());
         };
 
         if (isLoaded) {
-            timeoutIdRef.current = setTimeout(
-                updateText,
-                generateIntervalDuration()
-            );
+            timeoutIdRef.current = setTimeout(updateText, generateIntervalDuration());
         }
 
         return () => {
@@ -78,12 +63,8 @@ export const TextLoading = ({ endLoading }) => {
 
     return (
         <div className={style.container}>
-            <div
-                className={`${style.imgContainer} ${
-                    isLoaded ? "" : style.finisLoaded
-                }`}
-            >
-                {/* <Image src={"./Logo_00.svg"} fill={true}></Image> */}
+            <div className={`${style.imgContainer} ${isLoaded ? "" : style.finisLoaded}`}>
+                {/* <Image src={"./logoTest.svg"} fill={true}></Image> */}
                 <video autoPlay loop muted className={style.iconLoader}>
                     <source src="/loaderV1.mp4" />
                 </video>
@@ -96,11 +77,7 @@ export const TextLoading = ({ endLoading }) => {
                 <PercentageLoading onLoadingComplete={handleLoadingComplete} />
             </div>
 
-            <div
-                className={`${style.loadingTitleContainer} ${
-                    isLoaded ? "" : style.finisLoaded
-                }`}
-            >
+            <div className={`${style.loadingTitleContainer} ${isLoaded ? "" : style.finisLoaded}`}>
                 <div
                     className={`${style.inGenerationTitle} ${
                         !removeTitle ? "" : style.finisLoaded
@@ -109,34 +86,20 @@ export const TextLoading = ({ endLoading }) => {
                     <p className={style.titleText}>Generating Movie</p>
                     <div className={style.spanContainer}>
                         <span
-                            className={
-                                isLoaded
-                                    ? style.loadedSPan
-                                    : style.finisLoadedSpan
-                            }
+                            className={isLoaded ? style.loadedSPan : style.finisLoadedSpan}
                         ></span>
                         <span
-                            className={
-                                isLoaded
-                                    ? style.loadedSPan
-                                    : style.finisLoadedSpan
-                            }
+                            className={isLoaded ? style.loadedSPan : style.finisLoadedSpan}
                         ></span>
                         <span
-                            className={
-                                isLoaded
-                                    ? style.loadedSPan
-                                    : style.finisLoadedSpan
-                            }
+                            className={isLoaded ? style.loadedSPan : style.finisLoadedSpan}
                         ></span>
                     </div>
                 </div>
 
                 <div
                     className={`${style.filmGenerationDoneTitle} ${
-                        removeTitle
-                            ? style.appearDoneTitle
-                            : style.hiddenDoneTitle
+                        removeTitle ? style.appearDoneTitle : style.hiddenDoneTitle
                     }`}
                 >
                     <p className={style.titleText}>Movie generation is done</p>{" "}

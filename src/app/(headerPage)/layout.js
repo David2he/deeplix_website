@@ -13,7 +13,7 @@ export default function HeaderPage({ children }) {
                 <link rel="icon" href="/favicon.ico" />
             </head>
             <body>
-                <Header imageSource={"/logo_00.svg"} />
+                <Header imageSource={"/logoTest.svg"} />
                 {children}
             </body>
         </html>
