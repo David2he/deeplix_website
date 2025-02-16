@@ -3,3 +3,12 @@
 		font-size: 12px; /* Dès que l'écran est plus petit que 768px, 1rem = 14px */
 	}
 }
+
+@media (max-width: 750px) {
+	html {
+		overflow: hidden;
+		* {
+			overflow: hidden;
+		}
+	}
+}
