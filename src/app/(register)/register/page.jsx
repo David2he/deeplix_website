@@ -2,6 +2,7 @@ import { FormRegisterRefacto } from "@/components/FormRegister/FormRegisterRefac
 import style from "./page.module.scss";
 import { FormRegister } from "@/components/FormRegister/FormRegister";
 import Image from "next/image";
+import "./page.scss";
 export default function Register() {
 	return (
 		<div className={style.registerContainer}>

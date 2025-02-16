@@ -38,7 +38,7 @@ export const FormRegisterRefacto = () => {
 				<Image src="/DeepflixText.svg" alt="logo" fill={true} />
 			</div>
 			<div className={style.subLogoTextContainer}>
-				<p>S’inscrire à l’avant-première du 14/03 au Nouvel Odéon</p>
+				<p>S’inscrire à l’avant-première du 21/03 à 19h30 au Nouvel Odéon</p>
 			</div>
 			<form className={style.formContainer} onSubmit={handleSubmit}>
 				<input name="fName" placeholder="Entrer votre nom" className={style.input}></input>
