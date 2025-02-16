@@ -146,11 +146,6 @@
 		height: 70%;
 		width: 84%;
 		.logoContainer {
-			img {
-				// transform: translateY(-30%);
-
-				// height: 3rem !important;
-			}
 		}
 		.subLogoTextContainer {
 			width: 85%;
@@ -160,7 +155,10 @@
 			padding-bottom: 0.6rem;
 		}
 		.formContainer {
-			width: 95%;
+			width: 90%;
+			.input {
+				width: 85%;
+			}
 			.buttonContainer {
 				width: 100%;
 				padding-top: 2rem;
