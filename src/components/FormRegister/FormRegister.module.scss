@@ -1,5 +1,6 @@
 .formRegisterContainer {
 	width: clamp(20rem, 85%, 34rem);
+	max-height: 80%;
 	border-radius: 0.625rem;
 	background-color: rgb(21, 21, 21);
 	display: flex;
@@ -7,7 +8,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-	padding: 2.5rem 3.75rem;
+	padding: 1rem 3.75rem;
 
 	* {
 		font-size: 22px;
