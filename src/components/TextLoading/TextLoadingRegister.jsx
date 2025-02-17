@@ -65,8 +65,7 @@ export const TextLoadingRegister = ({ setGetFinalLoading }) => {
 	return (
 		<div className={style.container}>
 			<div className={`${style.imgContainer} ${isLoaded ? "" : style.finisLoaded}`}>
-				{/* <Image src={"./logoTest.svg"} fill={true}></Image> */}
-				<video autoPlay loop muted className={style.iconLoader}>
+				<video autoPlay loop muted controls={false} className={style.iconLoader}>
 					<source src="/loaderV1.mp4" />
 				</video>
 			</div>
@@ -75,7 +74,7 @@ export const TextLoadingRegister = ({ setGetFinalLoading }) => {
 			</div>
 
 			<div className={`${style.loadingTitleContainer} ${isLoaded ? "" : style.finisLoaded}`}>
-				<div className={`${style.inGenerationTitle} ${!removeTitle ? "" : style.finisLoaded}`}>
+				<div className={`${style.inGenerationTitle} `}>
 					<p className={style.titleText}>Génération de votre réservation</p>
 					<div className={style.spanContainer}>
 						<span className={isLoaded ? style.loadedSPan : style.finisLoadedSpan}></span>

@@ -46,7 +46,7 @@ export const LoaderInRegister = ({ getResponseFromApi }) => {
 								<div className={style.bgContainer}></div>
 								<div className={style.core}>
 									<div className={style.subTextContainer}>
-										<p>Merci, vous êtes maintenant inscrit !</p>
+										<p>Merci, vous êtes maintenant inscrit</p>
 										<p>à l’avant-première de</p>
 
 										<div className={style.lilIconInTextContainer}>

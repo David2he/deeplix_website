@@ -24,9 +24,9 @@ export const PercentageLoading = ({ onLoadingComplete }) => {
 		const generateIntervalDuration = () => {
 			let random = Math.random();
 			if (random < 0.4) {
-				return Math.floor(Math.random() * 400) + 40;
+				return Math.floor(Math.random() * 20) + 30;
 			}
-			return Math.floor(Math.random() * 80) + 30;
+			return Math.floor(Math.random() * 10) + 10;
 		};
 
 		const updatePercentage = () => {
