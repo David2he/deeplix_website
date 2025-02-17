@@ -1,14 +1,11 @@
 "use client";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useEffect } from "react";
 import { useCallApi } from "../useCallApi/useCallApi";
+import { motion } from "framer-motion";
 import style from "./FormRegister.module.scss";
-import { Toast } from "./Toast";
-
-export const FormRegister = () => {
-	const { postData, responseApi } = useCallApi();
-
+import Image from "next/image";
+export const FormRegister = ({ setGetResponseFromApi }) => {
+	const { postData, responseApi, loading } = useCallApi();
 	const prependZero = (number) => {
 		if (number < 9) return "0" + number;
 		else return number;
@@ -35,39 +32,46 @@ export const FormRegister = () => {
 		}
 		postData({ fName, name, userMailAdress, validationDate });
 	};
+	useEffect(() => {
+		if (responseApi === "already signed" && !loading) {
+			setGetResponseFromApi(true);
+		} else {
+		}
+	}, [responseApi, loading]);
 
 	return (
 		<div className={style.formRegisterContainer}>
 			<div className={style.logoContainer}>
 				<Image src="/DeepflixText.svg" alt="logo" fill={true} />
 			</div>
-			<p className={style.textInFormContainer}>S’inscrire à l’avant-première du 14/03 au Nouvel Odéon</p>
-
+			<div className={style.subLogoTextContainer}>
+				<p>S’inscrire à l’avant-première du 21/03 à 19h30 au Nouvel Odéon</p>
+			</div>
 			<form className={style.formContainer} onSubmit={handleSubmit}>
 				<input name="fName" placeholder="Entrer votre nom" className={style.input}></input>
 				<input name="name" placeholder="Entrer votre prénom" className={style.input}></input>
 				<input name="userMailAdress" placeholder="Entrer votre adresse e-mail" className={style.input}></input>
 
 				<div className={style.buttonContainer}>
-					<AnimatePresence>
-						{!responseApi && (
-							<motion.div
-								className={style.startButton}
-								exit={{ opacity: 0, translateY: 100 }}
-								transition={{ type: "spring", stiffness: 215, damping: 43 }}
-							>
-								<button type="submit">CONFIRMER</button>
-							</motion.div>
-						)}
-					</AnimatePresence>
+					<motion.div
+						initial={{ backgroundColor: "transparent" }}
+						whileHover={{
+							backgroundColor: responseApi === "already signed" ? "#184e3c80" : "#571f1cba",
+							color: responseApi === "already signed" ? "white" : "#f63c33",
+						}}
+						animate={{ borderColor: responseApi === "already signed" ? "#13c98c" : null, color: "white" }}
+						className={style.startButton}
+					>
+						<button type="submit">
+							{loading ? "..." : responseApi === "already signed" ? "vous êtes déja inscrit" : "CONFIRMER"}
+						</button>
+					</motion.div>
 				</div>
+				<p className={style.lillTextInfo}>
+					I understand that my information will be used in accordance with Deepflix’s{" "}
+					<span className={style.lillTextInfoUnderline}>Privacy Policy</span>
+				</p>
 			</form>
-			<div className={style.toastPlacer}>{responseApi && <Toast message={responseApi} />}</div>
-
-			<p className={style.lillTextInfo}>
-				I understand that my information will be used in accordance with Deepflix’s{" "}
-				<span className={style.lillTextInfoUnderline}>Privacy Policy</span>
-			</p>
 		</div>
 	);
 };
