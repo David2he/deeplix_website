@@ -9,12 +9,10 @@ export const TextLoadingRegister = ({ setGetFinalLoading }) => {
 	const timeoutIdRef = useRef(null);
 	const [generatedText, setGeneratedText] = useState("");
 	const [isLoaded, setIsLoaded] = useState(true);
-	const [removeTitle, setRemoveTitle] = useState(false);
 
 	const handleLoadingComplete = () => {
 		setTimeout(() => {
 			setIsLoaded(false);
-			setRemoveTitle(true);
 		}, 400);
 
 		setTimeout(() => {
