@@ -17,11 +17,20 @@
 	}
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
 	.registerContainer {
 		.imgContainer {
-			border: solid 8px black;
-			border-radius: 20px;
+			border: solid 6px black;
+			border-radius: 12px;
+		}
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.registerContainer {
+		.imgContainer {
+			border: solid 18px black;
+			border-radius: 40px;
 		}
 	}
 }

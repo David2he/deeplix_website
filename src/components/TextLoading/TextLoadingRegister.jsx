@@ -14,11 +14,9 @@ export const TextLoadingRegister = ({ setGetFinalLoading }) => {
 	const handleLoadingComplete = () => {
 		setTimeout(() => {
 			setIsLoaded(false);
-			// endLoading();
-		}, 400);
-		setTimeout(() => {
 			setRemoveTitle(true);
-		}, 200);
+		}, 400);
+
 		setTimeout(() => {
 			setGetFinalLoading(true);
 		}, 3800);
@@ -84,14 +82,6 @@ export const TextLoadingRegister = ({ setGetFinalLoading }) => {
 						<span className={isLoaded ? style.loadedSPan : style.finisLoadedSpan}></span>
 						<span className={isLoaded ? style.loadedSPan : style.finisLoadedSpan}></span>
 					</div>
-				</div>
-
-				<div
-					className={`${style.filmGenerationDoneTitle} ${
-						removeTitle ? style.appearDoneTitle : style.hiddenDoneTitle
-					}`}
-				>
-					<p className={style.titleText}>Movie generation is done</p>
 				</div>
 			</div>
 

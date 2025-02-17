@@ -18,7 +18,7 @@ export const LoaderInRegister = ({ getResponseFromApi }) => {
 					className={style.loaderContainer}
 				>
 					<motion.div
-						style={{ borderColor: getFinalLoading ? "black" : "orange" }}
+						style={{ borderColor: getFinalLoading ? "black" : "red" }}
 						className={style.borderContainer}
 					></motion.div>
 					<AnimatePresence mode="wait">

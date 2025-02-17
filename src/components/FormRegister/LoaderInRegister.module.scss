@@ -13,7 +13,7 @@
 		border-radius: 20px;
 		border: solid 3px;
 		width: 95%;
-		height: 85%;
+		height: 95%;
 		transition: 0.4s ease;
 	}
 
@@ -98,6 +98,9 @@
 }
 
 @media only screen and (max-width: 706px) {
+	.borderContainer {
+		height: 89% !important;
+	}
 	.bgContainer {
 		left: 3% !important;
 		width: 95vw !important;
@@ -112,6 +115,9 @@
 }
 
 @media only screen and (max-width: 550px) {
+	.borderContainer {
+		transform: translateY(-20px) !important;
+	}
 	.finalContainer {
 		.core {
 			p {
