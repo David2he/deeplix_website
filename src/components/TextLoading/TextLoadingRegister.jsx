@@ -45,7 +45,7 @@ export const TextLoadingRegister = ({ setGetFinalLoading }) => {
 			if (random < 0.2) {
 				return Math.floor(Math.random() * 100) + 50;
 			}
-			return Math.floor(Math.random() * 10) + 10;
+			return Math.floor(Math.random() * 35) + 10;
 		};
 
 		const updateText = () => {
@@ -91,7 +91,7 @@ export const TextLoadingRegister = ({ setGetFinalLoading }) => {
 						removeTitle ? style.appearDoneTitle : style.hiddenDoneTitle
 					}`}
 				>
-					<p className={style.titleText}>Movie generation is done</p>{" "}
+					<p className={style.titleText}>Movie generation is done</p>
 				</div>
 			</div>
 

@@ -31,13 +31,8 @@ export const FormRegister = ({ setGetResponseFromApi }) => {
 			return;
 		}
 		postData({ fName, name, userMailAdress, validationDate });
+		setGetResponseFromApi(true);
 	};
-	useEffect(() => {
-		if (responseApi === "already signed" && !loading) {
-			setGetResponseFromApi(true);
-		} else {
-		}
-	}, [responseApi, loading]);
 
 	return (
 		<div className={style.formRegisterContainer}>

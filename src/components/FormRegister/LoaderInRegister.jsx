@@ -33,11 +33,10 @@ export const LoaderInRegister = ({ getResponseFromApi }) => {
 							>
 								<div className={style.bgContainer}></div>
 								<div className={style.core}>
-									<p>Merci, vous êtes maintenant inscrit !</p>
 									<div className={style.subTextContainer}>
-										<p>
-											<p>à l’avant-première de</p>
-										</p>
+										<p>Merci, vous êtes maintenant inscrit !</p>
+										<p>à l’avant-première de</p>
+
 										<div className={style.lilIconInTextContainer}>
 											<Image
 												src={"/DeepflixText.svg"}
