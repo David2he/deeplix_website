@@ -65,7 +65,7 @@ export const TextLoadingRegister = ({ setGetFinalLoading }) => {
 	return (
 		<div className={style.container}>
 			<div className={`${style.imgContainer} ${isLoaded ? "" : style.finisLoaded}`}>
-				<video autoPlay loop muted playsInline controls className={style.iconLoader}>
+				<video autoPlay loop muted playsInline controls={false} className={style.iconLoader}>
 					<source src="/loaderV1.mp4" />
 				</video>
 			</div>
