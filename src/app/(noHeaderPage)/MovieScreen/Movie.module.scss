@@ -1,24 +1,24 @@
 .container {
-    position: relative;
-    width: calc(100vw - 8px);
-    height: 99vh;
-    background-color: black; // pour les bandes noires
-    overflow: hidden;
-    display: flex;
-    align-items: center; // centre le wrapper verticalement
-    justify-content: center; // centre le wrapper horizontalement
+	position: relative;
+	width: calc(100vw - 8px);
+	height: 99vh;
+	background-color: black; // pour les bandes noires
+	overflow: hidden;
+	display: flex;
+	align-items: center; // centre le wrapper verticalement
+	justify-content: center; // centre le wrapper horizontalement
 }
 
 .videoWrapper {
-    width: 100%;
-    padding-bottom: 56.25%; // ratio 16:9
-    position: relative;
+	width: 100%;
+	padding-bottom: 56.25%; // ratio 16:9
+	position: relative;
 }
 
 .fullscreenVideo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
