@@ -31,6 +31,18 @@ export const LoaderInRegister = ({ getResponseFromApi }) => {
 								transition={{ duration: 0.8 }}
 								className={style.finalContainer}
 							>
+								<div className={style.iconOnTop}>
+									<div className={style.imgPlacer}>
+										<Image
+											src={"/Logo_00.svg"}
+											quality={100}
+											fill
+											style={{
+												objectFit: "contain",
+											}}
+										/>
+									</div>
+								</div>
 								<div className={style.bgContainer}></div>
 								<div className={style.core}>
 									<div className={style.subTextContainer}>
